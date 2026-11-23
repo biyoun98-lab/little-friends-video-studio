@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: little-friends-video-studio
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_VERSION
+        value: 20
+      - key: FAL_KEY
+        sync: false
+      - key: FAL_VIDEO_MODEL
+        value: alibaba/wan-3.0-prime/text-to-video
