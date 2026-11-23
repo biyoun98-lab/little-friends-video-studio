@@ -10,8 +10,10 @@ A free browser-based production studio for original preschool cartoon videos (ag
 - Built-in device speech preview for the episode narration (voice availability depends on the browser/device).
 - Original animated 2D cartoon characters matching the channel designs: Leo (golden lion cub with red vest), Mimi (white bunny with pink dress and bow), and Bobo (small blue elephant).
 - Moving scenery, animated ball, scene titles and story dialogue.
+- Scene-aware foreground illustrations: plant growth, watering, toothbrushing, geometric shapes, rainbows and color activities are drawn to match the storyboard.
 - Browser-based video rendering in vertical 9:16, landscape 16:9 or square; exports MP4 when supported by the browser, with WebM fallback.
-- Optional local narration audio upload and mixing into the exported video (Web Audio + MediaRecorder; browser support required).
+- Original gentle synthesized instrumental soundtrack mixed into every rendered video locally (Web Audio + MediaRecorder; no music API or paid credits required).
+- Optional local narration audio upload mixed with the original soundtrack in the exported video.
 - Separate Leo, Mimi and Bobo voice selectors for browser narration previews; type dialogue as `Leo: ...`, `Mimi: ...` or `Bobo: ...` to assign character lines. Available voices depend on the device.
 - Animated scene details include drifting clouds, swaying flowers, gentle character arm gestures and Bobo's moving trunk.
 - Stronger pre-render quality checks for story structure, scene directions, consistent characters, repetitive dialogue and child-safety wording.
@@ -38,9 +40,9 @@ You can also open `index.html` directly in a modern browser; rendering and downl
 
 ## Limitations
 - This is original 2D canvas animation featuring Leo, Mimi and Bobo, not photorealistic AI-generated 3D video. MP4 availability depends on browser MediaRecorder support; WebM is the fallback.
-- Device speech preview is for listening only. To include narration in the exported WebM, record or prepare an audio file on your phone, load it in the optional narration field, preview it, and render. Audio mixing is performed locally in the browser.
+- Device speech preview is for listening only. The generated instrumental soundtrack is embedded automatically during rendering. To include spoken narration, record or prepare an audio file on your phone, load it in the optional narration field, and render; audio mixing is performed locally in the browser.
 - Learning songs use original written lyrics and browser speech preview; the studio does not generate a full musical backing track. Add properly licensed music in a free editor if desired.
-- The studio does not upload or publish automatically. Social account connection and publication are not enabled.
+- The studio prepares platform metadata but does not upload or publish automatically. Social account connection and publication are not enabled; review and upload the rendered video manually through the platform or a connected scheduler.
 - The render runs on the device; long videos may take time and require the browser tab to remain open.
 
 ## Child safety
