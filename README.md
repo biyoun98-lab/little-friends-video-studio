@@ -11,6 +11,7 @@ A free browser-based production studio for original preschool cartoon videos (ag
 - Browser-based WebM video rendering in vertical 9:16, landscape 16:9 or square.
 - Optional local narration audio upload and mixing into the exported video (Web Audio + MediaRecorder; browser support required).
 - Separate Leo, Mimi and Bobo voice selectors for browser narration previews; type dialogue as `Leo: ...`, `Mimi: ...` or `Bobo: ...` to assign character lines. Available voices depend on the device.
+- Animated scene details include drifting clouds, swaying flowers, gentle character arm gestures and Bobo's moving trunk.
 - SRT captions, production brief, saved drafts and YouTube/TikTok metadata package.
 - No paid AI service, API key, subscription or generation credits required.
 
