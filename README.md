@@ -9,6 +9,7 @@ A free browser-based production studio for original preschool cartoon videos (ag
 - Original animated 2D cartoon characters matching the channel designs: Leo (golden lion cub with red vest), Mimi (white bunny with pink dress and bow), and Bobo (small blue elephant).
 - Moving scenery, animated ball, scene titles and story dialogue.
 - Browser-based WebM video rendering in vertical 9:16, landscape 16:9 or square.
+- Optional local narration audio upload and mixing into the exported video (Web Audio + MediaRecorder; browser support required).
 - SRT captions, production brief, saved drafts and YouTube/TikTok metadata package.
 - No paid AI service, API key, subscription or generation credits required.
 
@@ -30,7 +31,7 @@ You can also open `index.html` directly in a modern browser; rendering and downl
 
 ## Limitations
 - This is original 2D canvas animation featuring Leo, Mimi and Bobo, not photorealistic AI-generated 3D video.
-- The built-in speech feature is a listening preview only; the browser does not embed that voice in the exported WebM. Export captions (SRT) and use a free editor if you need voiceover mixed into the final video.
+- Device speech preview is for listening only. To include narration in the exported WebM, record or prepare an audio file on your phone, load it in the optional narration field, preview it, and render. Audio mixing is performed locally in the browser.
 - No music is generated; add properly licensed music in a free editor if desired.
 - The studio does not upload or publish automatically. Social account connection and publication are not enabled.
 - The render runs on the device; long videos may take time and require the browser tab to remain open.
