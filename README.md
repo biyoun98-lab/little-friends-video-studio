@@ -6,6 +6,7 @@ A free browser-based production studio for original preschool cartoon videos (ag
 - Episode details, learning objectives, character descriptions and editable storyboard.
 - One-click generator for original, child-safe preschool story templates featuring Leo, Mimi and Bobo.
 - Daily batch builder that creates three distinct episode drafts and downloads a structured JSON production batch.
+- One-click sequential rendering of the saved three-episode batch, with each WebM downloaded separately and progress reporting.
 - Built-in device speech preview for the episode narration (voice availability depends on the browser/device).
 - Original animated 2D cartoon characters matching the channel designs: Leo (golden lion cub with red vest), Mimi (white bunny with pink dress and bow), and Bobo (small blue elephant).
 - Moving scenery, animated ball, scene titles and story dialogue.
@@ -29,9 +30,10 @@ You can also open `index.html` directly in a modern browser; rendering and downl
 2. Edit or add storyboard scenes.
 3. Choose the vertical format for TikTok/YouTube Shorts or landscape for standard YouTube.
 4. Press **Render video** and wait for the render to finish.
-5. Use **Build 3-episode batch** to create three distinct drafts in one JSON package, then load each episode into the editor and render it.
-6. Download the WebM video, SRT captions and publishing metadata.
-7. Review the final file, then upload manually to YouTube and TikTok.
+5. Use **Build 3-episode batch** to create three distinct drafts in one JSON package.
+6. Press **Render all 3 videos** to render each saved episode sequentially and download three separate WebM files. Keep the browser tab open; stop the batch if you need to interrupt it.
+7. Download the SRT captions and publishing metadata.
+8. Review each final file, then upload manually to YouTube and TikTok.
 
 ## Limitations
 - This is original 2D canvas animation featuring Leo, Mimi and Bobo, not photorealistic AI-generated 3D video.
