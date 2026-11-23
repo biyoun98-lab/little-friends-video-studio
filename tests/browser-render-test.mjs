@@ -27,6 +27,10 @@ try {
   await page.locator("#render").click();
   await page.waitForFunction(() => document.querySelector("#renderStatus").textContent.includes("Video ready"), null, { timeout: 60000 }).catch(async error => { const status = await page.locator("#renderStatus").innerText(); const progress = await page.locator("#bar").evaluate(el => el.style.width); throw new Error(`Video export did not finish. Status: ${status}; progress: ${progress}; browser errors: ${browserErrors.join(" | ")}; ${error.message}`); });
 
+  const renderDiagnostics = await page.evaluate(() => window.__renderDiagnostics || null);
+  console.log("Render diagnostics:", JSON.stringify(renderDiagnostics));
+  assert.ok(renderDiagnostics && renderDiagnostics.blobSize > 10000, "MediaRecorder must produce a non-empty video blob: " + JSON.stringify(renderDiagnostics));
+
   const downloadPromise = page.waitForEvent("download");
   await page.locator("#videoDownload").click();
   const download = await downloadPromise;
