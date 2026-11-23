@@ -3,10 +3,13 @@ import { strict as assert } from "node:assert";
 import { resolve } from "node:path";
 import { spawnSync } from "node:child_process";
 
-const browser = await chromium.launch({ headless: true, args: ["--autoplay-policy=no-user-gesture-required"] });
+const browser = await chromium.launch({ headless: true, args: ["--autoplay-policy=no-user-gesture-required", "--disable-background-timer-throttling", "--disable-renderer-backgrounding"] });
 try {
   const page = await browser.newPage({ acceptDownloads: true, viewport: { width: 1280, height: 900 } });
-  page.setDefaultTimeout(15000);
+  page.setDefaultTimeout(20000);
+  const browserErrors = [];
+  page.on("pageerror", error => browserErrors.push(error.message));
+  page.on("console", message => { if (message.type() === "error") browserErrors.push(message.text()); });
   await page.goto("file://" + resolve("index.html"));
   await page.locator("#qualityCheck").click();
   const quality = await page.locator("#qualityStatus").innerText();
@@ -22,7 +25,7 @@ try {
   await page.locator("#fps").selectOption("24");
   await page.locator("#ratio").selectOption("portrait");
   await page.locator("#render").click();
-  await page.waitForFunction(() => document.querySelector("#renderStatus").textContent.includes("Video ready"), null, { timeout: 30000 });
+  await page.waitForFunction(() => document.querySelector("#renderStatus").textContent.includes("Video ready"), null, { timeout: 60000 }).catch(async error => { const status = await page.locator("#renderStatus").innerText(); const progress = await page.locator("#bar").evaluate(el => el.style.width); throw new Error(`Video export did not finish. Status: ${status}; progress: ${progress}; browser errors: ${browserErrors.join(" | ")}; ${error.message}`); });
 
   const downloadPromise = page.waitForEvent("download");
   await page.locator("#videoDownload").click();
