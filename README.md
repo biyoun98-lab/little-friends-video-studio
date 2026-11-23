@@ -4,7 +4,7 @@ A free browser-based production studio for original preschool cartoon videos (ag
 
 ## Free features
 - Episode details, learning objectives, character descriptions and editable storyboard.
-- Original animated 2D cartoon characters: a golden lion cub and a bunny.
+- Original animated 2D cartoon characters matching the channel designs: Leo (golden lion cub with red vest), Mimi (white bunny with pink dress and bow), and Bobo (small blue elephant).
 - Moving scenery, animated ball, scene titles and story dialogue.
 - Browser-based WebM video rendering in vertical 9:16, landscape 16:9 or square.
 - SRT captions, production brief, saved drafts and YouTube/TikTok metadata package.
@@ -27,7 +27,7 @@ You can also open `index.html` directly in a modern browser; rendering and downl
 6. Review the final file, then upload manually to YouTube and TikTok.
 
 ## Limitations
-- This is original 2D canvas animation, not photorealistic AI-generated 3D video.
+- This is original 2D canvas animation featuring Leo, Mimi and Bobo, not photorealistic AI-generated 3D video.
 - No recorded voiceover or music is generated; add narration and properly licensed music in a free editor if desired.
 - The studio does not upload or publish automatically. Social account connection and publication are not enabled.
 - The render runs on the device; long videos may take time and require the browser tab to remain open.
