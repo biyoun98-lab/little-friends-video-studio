@@ -9,7 +9,7 @@ for (const [i, source] of scripts.entries()) {
   new vm.Script(source, { filename: "index.inline-" + (i + 1) + ".js" });
 }
 for (const id of ["dailyBatch", "renderBatch", "qualityCheck", "render", "srt", "package"]) {
-  assert.match(html, new RegExp('id=["\\']' + id + '["\\']'), "Missing UI control: " + id);
+  assert.ok(html.includes('id="' + id + '"') || html.includes("id='" + id + "'"), "Missing UI control: " + id);
 }
 for (const feature of ["function generateDailyBatch", "async function renderAllBatch", "function runQualityCheck", "function drawStoryVisual", "function captions"]) {
   assert.ok(html.includes(feature), "Missing production feature: " + feature);
