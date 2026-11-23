@@ -33,5 +33,5 @@ Never put the fal API key in browser code or commit a real key to GitHub. The ap
 - The in-browser WebM renderer makes storyboard cards, not full AI animation.
 - Queue job tracking is in server memory; keep a single server instance during generation. For multi-instance production, use a persistent job store.
 
-## Child-safety
+## Deployment\n\nA Render Blueprint is included in `render.yaml` and defaults to the free web-service tier. In Render, create a new Blueprint Instance from this repository, then add your fal API key as the private `FAL_KEY` environment variable. Do not commit the key. Free hosting may sleep when idle and is not a production uptime guarantee. The server keeps active queue job handles in memory, so keep the same instance alive until a clip finishes.\n\nYou can also deploy the included `Dockerfile` to a Node/Docker host and set the same environment variables there. Static GitHub Pages hosting cannot run the private generation API.\n\n## Child-safety
 Keep language simple and gentle. Avoid frightening imagery, dangerous imitation, bullying, personal-data requests and manipulative calls to action. A human must review every generated clip before publishing.
