@@ -1,29 +1,37 @@
 # Little Friends Video Studio
 
-A lightweight production studio for original, child-friendly videos for ages 2–6.
+A production workspace for original preschool videos (ages 2–6).
 
-## Features
-- Arabic, English, or bilingual episode briefs
-- Editable scene-by-scene storyboard and child-safety checklist
-- In-browser animated storyboard renderer (WebM; not AI character animation)
-- Optional real AI text-to-video generation through a secure fal.ai queue backend
-- Vertical 9:16, landscape 16:9, and square formats
-- Captions (.srt), production brief (.txt), and publishing metadata (.json) for YouTube and TikTok
-- Local browser draft saving
+## Current capabilities
+- Episode metadata, learning objective, character bible, mood and storyboard editor.
+- Per-scene prompt builder that repeats the character bible and age-appropriate visual constraints.
+- Optional Wan 3.0 Prime text-to-video generation through a private Node server and fal.ai queue.
+- Vertical, landscape and square output; configurable 480p/720p/1080p; generated audio disabled.
+- In-browser animated storyboard-card renderer (WebM). This is a fallback/animatic, not AI character animation.
+- SRT captions, production brief, draft saving and YouTube/TikTok metadata package.
+- A server health endpoint for deployment checks.
 
 ## Run locally
-1. Install Node.js 20 or newer.
-2. Copy `.env.example` to `.env` and set `FAL_KEY` and `FAL_VIDEO_MODEL` using your fal.ai account credentials and a text-to-video model endpoint that accepts `prompt`, `duration`, and `aspect_ratio`.
-3. Run `npm install`, then `npm start`.
-4. Open `http://localhost:3000`.
+1. Use Node.js 20+.
+2. Copy `.env.example` to `.env`, then set `FAL_KEY` in the server environment.
+3. Optional: set `FAL_VIDEO_MODEL` to a compatible Wan 3.0 Prime endpoint; default is `alibaba/wan-3.0-prime/text-to-video`.
+4. Run `npm install` and `npm start`; open `http://localhost:3000`.
 
-Keep the API key only in the server environment. Never put it in frontend code or commit it to GitHub. The AI endpoint/model may have usage charges; check the provider's pricing and account balance before generating. The model input/output schema can vary, so use a compatible text-to-video endpoint.
+Never put the fal API key in browser code or commit a real key to GitHub. The app asks for confirmation before each paid generation. The connected fal account's current rate was reported as $0.05 per second for the selected model; a 5-second request is approximately $0.25 before configuration differences. Rates and final billing may change; check the provider before use. No video is generated automatically.
 
-## Publishing workflow
-Render or generate a video, review it, then download the video and the publishing package. The package includes title, description, hashtags, captions, audience, format, and scene metadata. Upload manually through YouTube Studio or TikTok. This repository does not sign in to social accounts or publish automatically.
+## Production workflow
+1. Set episode details and keep the character descriptions exact.
+2. Edit the storyboard, choose one scene, and use **Build scene prompt**.
+3. Review the prompt and select the clip duration/resolution/aspect ratio.
+4. Confirm the estimated paid generation to submit one scene. Repeat only for scenes you want to generate.
+5. Review each clip for character consistency, child safety, visual artifacts and audio/text. The model call disables generated audio; add reviewed narration/music in an editor with properly licensed assets.
+6. Export captions and publishing metadata. Download and manually upload the approved video to YouTube/TikTok.
 
-## Child-safety defaults
-For ages 2–6: gentle themes, simple language, no frightening imagery, dangerous imitation, personal-data requests, or external links in child-facing content. Review every generated video before publishing.
+## Important limitations
+- Character consistency is encouraged by repeating the character bible, but text-to-video alone cannot guarantee identical characters across separate clips. A reference-image workflow is a future enhancement.
+- The current AI path generates one scene clip per confirmed request; it does not automatically stitch clips, generate voiceover, create thumbnails, or publish to social accounts.
+- The in-browser WebM renderer makes storyboard cards, not full AI animation.
+- Queue job tracking is in server memory; keep a single server instance during generation. For multi-instance production, use a persistent job store.
 
-## Deployment
-Deploy the Node app to a host that supports persistent environment variables and outbound HTTPS requests. Configure `FAL_KEY` and `FAL_VIDEO_MODEL` in the host's secret/environment settings. Static hosting alone (such as GitHub Pages) cannot run the private generation backend.
+## Child-safety
+Keep language simple and gentle. Avoid frightening imagery, dangerous imitation, bullying, personal-data requests and manipulative calls to action. A human must review every generated clip before publishing.
