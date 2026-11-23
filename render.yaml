@@ -9,7 +9,3 @@ services:
     envVars:
       - key: NODE_VERSION
         value: 20
-      - key: FAL_KEY
-        sync: false
-      - key: FAL_VIDEO_MODEL
-        value: alibaba/wan-3.0-prime/text-to-video
