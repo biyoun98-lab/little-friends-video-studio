@@ -12,10 +12,14 @@ A free browser-based production studio for original preschool cartoon videos (ag
 - Moving scenery, animated ball, scene titles and story dialogue.
 - Scene-aware foreground illustrations: plant growth, watering, toothbrushing, geometric shapes, rainbows, color activities, rain, counting and emotion cues are animated to match the storyboard.
 - Browser-based video rendering in vertical 9:16, landscape 16:9 or square; exports MP4 when supported by the browser, with WebM fallback.
-- Original gentle synthesized instrumental soundtrack mixed into every rendered video locally (Web Audio + MediaRecorder; no music API or paid credits required).\n- Short original musical cues are triggered at scene changes and adapt to story themes such as counting, friendship, feelings, rain and nature.
+- Original gentle synthesized instrumental soundtrack mixed into every rendered video locally (Web Audio + MediaRecorder; no music API or paid credits required).
+- Short original musical cues are triggered at scene changes and adapt to story themes such as counting, friendship, feelings, rain and nature.
 - Optional local narration audio upload mixed with the original soundtrack in the exported video.
 - Separate Leo, Mimi and Bobo voice selectors for browser narration previews; type dialogue as `Leo: ...`, `Mimi: ...` or `Bobo: ...` to assign character lines. Available voices depend on the device.
-- Scene-aware visual direction: background palettes respond to story themes, the speaking/focused character moves to center stage, supporting friends scale down, and gentle camera zoom adds visual rhythm.\n- Readable on-screen captions, episode/scene identity, progress bar and a consistent channel endline.\n- Stronger creative scoring checks opening hooks, short preschool dialogue, questions, visual variety, story resolution and character continuity.\n- Animated scene details include drifting clouds, swaying flowers, gentle character arm gestures and Bobo's moving trunk.
+- Scene-aware visual direction: background palettes respond to story themes, the speaking/focused character moves to center stage, supporting friends scale down, and gentle camera zoom adds visual rhythm.
+- Readable on-screen captions, episode/scene identity, progress bar and a consistent channel endline.
+- Stronger creative scoring checks opening hooks, short preschool dialogue, questions, visual variety, story resolution and character continuity.
+- Animated scene details include drifting clouds, swaying flowers, gentle character arm gestures and Bobo's moving trunk.
 - Stronger pre-render quality checks for story structure, scene directions, consistent characters, repetitive dialogue and child-safety wording.
 - SRT captions, production brief, saved drafts and YouTube/TikTok metadata package.
 - No paid AI service, API key, subscription or generation credits required.
