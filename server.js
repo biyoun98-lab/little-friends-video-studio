@@ -1,83 +1,28 @@
 import express from "express";
-import { timingSafeEqual } from "node:crypto";
 const app=express();
 const PORT=process.env.PORT||3000;
-const AI_ENDPOINT="minimax/h3-max-turbo/text-to-video";
-const recentAiSubmissions=new Map();
-let aiUsageDay="";
-let aiDailyCount=0;
-const DAILY_AI_LIMIT=3;
+const competitorChannels=[{"name":"Kidz Toons","id":"UCbnMgJ5FVXbeW1zWevN24tg"},{"name":"Bee TV","id":"UCZyzJreQEtHYXw_eOgcIwRg"},{"name":"Chloe and Koko TV","id":"UCgqiSokOr9E86J0See4Gkmw"},{"name":"Playful Animals","id":"UCJ4gmhNe7CTu-3VbtWCkomA"},{"name":"Bunny ABC Kids","id":"UC71PNUaS-TtKtxav2M5FzJA"},{"name":"Lily's World","id":"UCw3UI5p2X9Ea91Snah06IcQ"},{"name":"KidsMegaHub","id":"UClwE4BXcILf_DsqDTxMEDmA"},{"name":"Jad Learning World","id":"UCOSMzc-1mNqJorB3QimIuQQ"},{"name":"Bubble Toon TV","id":"UCqaEKpifOifDJHFflcH65vQ"},{"name":"ZOOZIVA TV","id":"UCMXuXWog44c-OhT4RuCqftg"},{"name":"Kiddies Kito World","id":"UCM8xsWTfl6rZKy58brPoSyg"},{"name":"ABC Luma","id":"UCYVnuLz7Tx53Y2Ciq4KGf6w"},{"name":"Indra Bikin Rusuh","id":"UCiDwAnb2UWMqX0UgN06zIBg"},{"name":"The Smile Brothers","id":"UC2US4TU1bPVDEgUvGmUb9YQ"},{"name":"NVN KIDS TV","id":"UCFrbMMZhBfZ4J3XI97Od5ow"},{"name":"Pip the Kiwi","id":"UCZedmr5a3IeOQbtWbF4Paxg"},{"name":"MoodNMotion","id":"UCvXRcORuGSjLknV2Wbm-0zQ"},{"name":"Pinky Corner","id":"UCfY2ICJVnaDiYO5_8WMGcBA"},{"name":"Bumble Bloom Kids","id":"UCXjct7TtEtTdj0Bg5Fu8Y9w"}];
+let competitorCache={at:0,data:null};
+const CACHE_MS=15*60*1000;
 app.use(express.json({limit:"1mb"}));
-
-function validAiAccess(req){
-  const supplied=Buffer.from(String(req.get("x-ai-access-code")||""));
-  const expected=Buffer.from(String(process.env.AI_ACCESS_CODE||""));
-  return expected.length>0&&supplied.length===expected.length&&timingSafeEqual(supplied,expected);
+function decodeXml(value=""){return value.replace(/&amp;/g,"&").replace(/&quot;/g,'"').replace(/&#39;|&apos;/g,"'").replace(/&lt;/g,"<").replace(/&gt;/g,">");}
+function tagValue(xml,tag){const match=xml.match(new RegExp("<"+tag+"[^>]*>([\\s\\S]*?)</"+tag+">","i"));return match?decodeXml(match[1].replace(/<!\\[CDATA\\[|\\]\\]>/g,"").trim()):"";}
+async function fetchCompetitorChannel(channel){
+ const url="https://www.youtube.com/feeds/videos.xml?channel_id="+encodeURIComponent(channel.id);
+ const response=await fetch(url,{headers:{"User-Agent":"LittleFriendsStudio/1.0 (+public YouTube RSS reader)"}});
+ if(!response.ok)throw new Error("HTTP "+response.status);
+ const xml=await response.text(),entries=xml.match(/<entry>[\\s\\S]*?<\\/entry>/g)||[];
+ return entries.slice(0,15).map(entry=>{const videoId=tagValue(entry,"yt:videoId"),title=tagValue(entry,"title"),published=tagValue(entry,"published");return videoId?{channel:channel.name,title,published,url:"https://www.youtube.com/watch?v="+videoId,videoId}:null;}).filter(Boolean);
 }
-function resetDailyCounterIfNeeded(){
-  const today=new Date().toISOString().slice(0,10);
-  if(today!==aiUsageDay){aiUsageDay=today;aiDailyCount=0;}
-}
-
-app.get("/api/health",(req,res)=>res.json({
-  ok:true,
-  mode:"free-browser-renderer+optional-cloud-ai",
-  paidAI:!!process.env.FAL_KEY&&!!process.env.AI_ACCESS_CODE,
-  aiVideoConfigured:!!process.env.FAL_KEY&&!!process.env.AI_ACCESS_CODE,
-  aiVideoModel:AI_ENDPOINT
-}));
-
-app.post("/api/ai/video",async(req,res)=>{
-  if(!process.env.FAL_KEY||!process.env.AI_ACCESS_CODE)return res.status(503).json({error:"Cloud AI is not configured. Add FAL_KEY and AI_ACCESS_CODE as private server environment variables."});
-  if(!validAiAccess(req))return res.status(403).json({error:"Private studio access code is incorrect."});
-  const prompt=typeof req.body?.prompt==="string"?req.body.prompt.trim():"";
-  const duration=Number(req.body?.duration??5);
-  const aspectRatio=req.body?.aspect_ratio??"9:16";
-  if(!prompt||prompt.length>5000)return res.status(400).json({error:"Prompt must contain 1–5000 characters."});
-  if(![5,10].includes(duration))return res.status(400).json({error:"Only 5- or 10-second draft requests are enabled in this version."});
-  if(!["9:16","16:9","1:1"].includes(aspectRatio))return res.status(400).json({error:"Unsupported aspect ratio."});
-  const clientIp=req.ip||req.socket.remoteAddress||"unknown";
-  const last=recentAiSubmissions.get(clientIp)||0;
-  if(Date.now()-last<60000)return res.status(429).json({error:"Please wait one minute before submitting another AI generation."});
-  resetDailyCounterIfNeeded();
-  if(aiDailyCount>=DAILY_AI_LIMIT)return res.status(429).json({error:"The studio has reached its limit of three AI drafts today. The free local renderer is still available."});
-  try{
-    const upstream=await fetch("https://queue.fal.run/"+AI_ENDPOINT,{
-      method:"POST",
-      headers:{Authorization:"Key "+process.env.FAL_KEY,"Content-Type":"application/json"},
-      body:JSON.stringify({prompt,prompt_expansion_mode:"balanced",duration,resolution:"768P",aspect_ratio:aspectRatio,enable_safety_checker:true})
-    });
-    const data=await upstream.json().catch(()=>({}));
-    if(!upstream.ok)return res.status(upstream.status).json({error:data.detail||data.error||"fal.ai rejected the request."});
-    if(!data.request_id)return res.status(502).json({error:"fal.ai did not return a request ID."});
-    recentAiSubmissions.set(clientIp,Date.now());
-    aiDailyCount+=1;
-    return res.status(202).json({status:data.status,request_id:data.request_id,model:AI_ENDPOINT,drafts_remaining_today:DAILY_AI_LIMIT-aiDailyCount});
-  }catch(error){
-    return res.status(502).json({error:"Could not reach the AI provider. Please try again later."});
-  }
+app.get("/api/health",(req,res)=>res.json({ok:true,mode:"free-browser-renderer+public-youtube-rss",competitorChannels:competitorChannels.length}));
+app.get("/api/competitors/latest",async(req,res)=>{
+ if(competitorCache.data&&Date.now()-competitorCache.at<CACHE_MS)return res.json({...competitorCache.data,cached:true});
+ const results=await Promise.allSettled(competitorChannels.map(fetchCompetitorChannel));
+ const videos=results.flatMap(r=>r.status==="fulfilled"?r.value:[]);
+ const channelsOk=results.filter(r=>r.status==="fulfilled").length;
+ const failed=results.map((r,i)=>r.status==="rejected"?competitorChannels[i].name:null).filter(Boolean);
+ const data={fetched_at:new Date().toISOString(),channels_total:competitorChannels.length,channels_ok:channelsOk,channels_failed:failed,videos:videos.sort((a,b)=>b.published.localeCompare(a.published))};
+ if(!videos.length)return res.status(502).json({error:"لم تُرجع YouTube RSS أي فيديو في هذا التحديث. حاول لاحقاً.",channels_failed:failed});
+ competitorCache={at:Date.now(),data};return res.json({...data,cached:false});
 });
-
-app.get("/api/ai/video/:requestId",async(req,res)=>{
-  if(!process.env.FAL_KEY||!process.env.AI_ACCESS_CODE)return res.status(503).json({error:"Cloud AI is not configured."});
-  if(!validAiAccess(req))return res.status(403).json({error:"Private studio access code is incorrect."});
-  const requestId=req.params.requestId;
-  if(!/^[0-9a-f]{8}-[0-9a-f]{4}-[1-8][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(requestId))
-    return res.status(400).json({error:"Invalid request ID."});
-  const base="https://queue.fal.run/"+AI_ENDPOINT+"/requests/"+requestId;
-  try{
-    const statusResponse=await fetch(base+"/status",{headers:{Authorization:"Key "+process.env.FAL_KEY}});
-    const status=await statusResponse.json().catch(()=>({}));
-    if(!statusResponse.ok)return res.status(statusResponse.status).json({error:status.detail||"Could not read AI job status."});
-    if(status.status!=="COMPLETED")return res.json({status:status.status,request_id:requestId});
-    const resultResponse=await fetch(base,{headers:{Authorization:"Key "+process.env.FAL_KEY}});
-    const result=await resultResponse.json().catch(()=>({}));
-    if(!resultResponse.ok)return res.status(resultResponse.status).json({error:result.detail||"AI result is not available."});
-    return res.json({status:"COMPLETED",request_id:requestId,result});
-  }catch(error){
-    return res.status(502).json({error:"Could not retrieve the AI result."});
-  }
-});
-
-app.use(express.static("."));
-app.listen(PORT,()=>console.log("Little Friends studio running on "+PORT));
+app.use(express.static("."));app.listen(PORT,()=>console.log("Little Friends free studio running on "+PORT));
