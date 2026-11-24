@@ -24,7 +24,29 @@ async function fetchCompetitorChannel(channel){
   return videoId?{channel:channel.name,title,published,url:"https://www.youtube.com/watch?v="+videoId,videoId}:null;
  }).filter(Boolean);
 }
-app.get("/api/health",(req,res)=>res.json({ok:true,mode:"free-browser-renderer+public-youtube-rss",competitorChannels:competitorChannels.length}));
+app.get("/api/health",(req,res)=>res.json({ok:true,mode:"free-browser-renderer+public-youtube-rss+freellmapi",competitorChannels:competitorChannels.length,ai:{provider:"FreeLLMAPI",configured:Boolean(process.env.FREELLMAPI_API_KEY),model:process.env.FREELLMAPI_MODEL||"auto"}}));
+app.get("/api/ai/status",(req,res)=>res.json({provider:"FreeLLMAPI",configured:Boolean(process.env.FREELLMAPI_API_KEY),model:process.env.FREELLMAPI_MODEL||"auto",baseUrl:(process.env.FREELLMAPI_BASE_URL||"http://127.0.0.1:3001/v1").replace(/\/$/,"")}));
+app.post("/api/ai/story",async(req,res)=>{
+ const apiKey=process.env.FREELLMAPI_API_KEY;
+ if(!apiKey)return res.status(503).json({error:"FreeLLMAPI is not configured yet. Add FREELLMAPI_API_KEY to the server environment; never put it in browser code."});
+ const {title="",goal="",language="en",duration=45,characters="",tone="Warm, cheerful, gentle"}=req.body||{};
+ if(typeof title!=="string"||typeof goal!=="string"||typeof characters!=="string")return res.status(400).json({error:"Invalid episode input."});
+ const base=(process.env.FREELLMAPI_BASE_URL||"http://127.0.0.1:3001/v1").replace(/\/$/,"");
+ const model=process.env.FREELLMAPI_MODEL||"auto";
+ const system="You are the original preschool story editor for Little Friends World. Create original, gentle, age-appropriate stories for ages 2–6. Never imitate named competitor content. Preserve the supplied character designs. Return ONLY valid JSON with keys title, learningGoal, scenes. scenes must be exactly four arrays of three strings: [short heading, child-friendly action/dialogue, concise visual direction]. No markdown fences.";
+ const user=`Create one original ${duration}-second preschool episode. Language: ${language}. Title idea: ${title}. Learning goal: ${goal}. Tone: ${tone}. Character bible: ${characters}. Include a curiosity hook, discovery, practice, and reassuring resolution. Keep each dialogue scene under 28 words. Avoid unsafe actions, frightening imagery, copyrighted characters, existing songs, or copied scripts.`;
+ try{
+  const upstream=await fetch(base+"/chat/completions",{method:"POST",headers:{"Authorization":"Bearer "+apiKey,"Content-Type":"application/json"},body:JSON.stringify({model,messages:[{role:"system",content:system},{role:"user",content:user}],temperature:0.75,max_tokens:1200}),signal:AbortSignal.timeout(65000)});
+  const payload=await upstream.json().catch(()=>({}));
+  if(!upstream.ok)return res.status(502).json({error:"FreeLLMAPI upstream error ("+upstream.status+"): "+String(payload.error?.message||payload.message||"request failed").slice(0,300)});
+  const raw=payload.choices?.[0]?.message?.content;
+  if(typeof raw!=="string")return res.status(502).json({error:"FreeLLMAPI returned no text content."});
+  const clean=raw.trim().replace(/^```(?:json)?\s*/i,"").replace(/\s*```$/,"");
+  const story=JSON.parse(clean);
+  if(!story||typeof story.title!=="string"||!Array.isArray(story.scenes)||story.scenes.length!==4||story.scenes.some(s=>!Array.isArray(s)||s.length!==3||s.some(v=>typeof v!=="string")))return res.status(502).json({error:"AI response did not match the required four-scene story format."});
+  return res.json({provider:"FreeLLMAPI",model:payload.model||model,story:{title:story.title,learningGoal:String(story.learningGoal||goal),scenes:story.scenes}});
+ }catch(error){return res.status(502).json({error:error.name==="TimeoutError"?"FreeLLMAPI request timed out.":"Could not reach FreeLLMAPI: "+String(error.message||error).slice(0,220)});}
+});
 app.get("/api/competitors/latest",async(req,res)=>{
  if(competitorCache.data&&Date.now()-competitorCache.at<CACHE_MS)return res.json({...competitorCache.data,cached:true});
  const allChannels=competitorChannels;
