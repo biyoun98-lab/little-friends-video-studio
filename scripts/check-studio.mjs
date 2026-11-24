@@ -8,7 +8,7 @@ const competitorHtml = await readFile(new URL("../competitor-library.html", impo
 
 const requiredIds = [
   "preview", "render", "renderBatch", "dailyBatch", "qualityStatus",
-  "videoDownload", "narrationAudio", "scenes", "renderStatus", "batchPackage", "aiStatus", "aiGenerate", "aiCheck", "aiCostConfirm"
+  "videoDownload", "narrationAudio", "scenes", "renderStatus", "batchPackage", "aiStatus", "aiGenerate", "aiCheck", "aiCostConfirm", "aiAccessCode"
 ];
 for (const id of requiredIds) {
   assert.match(html, new RegExp('id="' + id + '"'), `Missing required studio element: ${id}`);
@@ -38,6 +38,9 @@ assert.match(server, /const AI_ENDPOINT="minimax\/h3-max-turbo\/text-to-video"/,
 assert.match(html, /paid AI video request/, "AI generation must disclose its paid nature.");
 assert.match(html, /refreshAIStatus/, "AI server configuration status check is missing.");
 assert.match(server, /Authorization:"Key "\+process\.env\.FAL_KEY/, "fal API key must remain server-side.");
+assert.match(server, /timingSafeEqual/, "AI access code must be checked safely on the server.");
+assert.match(server, /DAILY_AI_LIMIT=3/, "AI generation must have a daily spending guard.");
+assert.match(html, /X-AI-Access-Code/, "Browser must send the private AI access code only to the studio server.");
 assert.match(server, /enable_safety_checker:true/, "AI safety checker must remain enabled.");
 assert.match(server, /Only 5- or 10-second draft requests/, "Cloud AI request duration must be bounded.");
 assert.match(server, /recentAiSubmissions/, "Cloud AI requests must be rate-limited.");
