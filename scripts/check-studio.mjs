@@ -34,8 +34,8 @@ assert.match(html, /function\s+downloadDailyPublishingPackage\s*\(/, "Three-epis
 assert.match(html, /madeForKids:true/, "YouTube child-directed publishing metadata must be included.");
 assert.match(html, /TikTok Studio/, "TikTok publishing destination is missing.");
 assert.match(html, /Metricool Planner/, "Metricool publishing workflow link is missing.");
-assert.match(html, /minimax\/h3-max-turbo\/text-to-video/, "Optional H3 Max Turbo AI engine must be identified.");
-assert.match(html, /paid AI generation request/, "AI generation must disclose its paid nature.");
+assert.match(server, /const AI_ENDPOINT="minimax\/h3-max-turbo\/text-to-video"/, "Optional H3 Max Turbo AI engine must be identified.");
+assert.match(html, /paid AI video request/, "AI generation must disclose its paid nature.");
 assert.match(html, /refreshAIStatus/, "AI server configuration status check is missing.");
 assert.match(server, /Authorization:"Key "\+process\.env\.FAL_KEY/, "fal API key must remain server-side.");
 assert.match(server, /enable_safety_checker:true/, "AI safety checker must remain enabled.");
