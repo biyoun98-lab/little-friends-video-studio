@@ -39,6 +39,28 @@ Never put the fal API key in browser code or commit a real key to GitHub. The ap
 - The in-browser WebM renderer makes storyboard cards, not full AI animation. The three-episode batch planner creates three editable storyboards and can sequentially render and download three WebM storyboard-card videos in a supported browser. It still does not create full AI character animation.
 - Queue job tracking is in server memory; keep a single server instance during generation. For multi-instance production, use a persistent job store.
 
+## Optional LongCat-Video engine
+
+The studio now exposes a secure adapter for a separately hosted LongCat-Video GPU worker. This is intentionally separate from the Node/Render web service: the official LongCat model is a 13.6B-parameter PyTorch/CUDA model, and its official setup requires a CUDA-capable GPU, model weights, PyTorch and FlashAttention. The free Render web tier is not a suitable place to run inference.
+
+Configure these private server environment variables:
+- `LONGCAT_API_URL`: HTTPS base URL of your LongCat worker (for example, your private GPU service URL).
+- `LONGCAT_API_TOKEN`: optional bearer token shared with that worker.
+
+The worker must implement this small HTTP contract:
+- `POST /generate` with JSON `{ "prompt": "...", "duration": 5, "resolution": "480p", "aspect_ratio": "9:16" }`; respond with `{ "job_id": "..." }`.
+- `GET /status/{job_id}`; respond with `{ "status": "queued|running|completed|failed" }`. When completed, include `"video_url": "https://..." `; when failed, optionally include `"error": "..." `.
+- If a token is configured, accept it as `Authorization: Bearer <token>`.
+
+Studio endpoints:
+- `GET /api/longcat/health` reports whether a worker URL is configured.
+- `POST /api/longcat/generate` starts a worker job and returns a studio request ID.
+- `GET /api/longcat/status?request_id=...` polls the job.
+
+The adapter validates input, keeps the worker token server-side, requires HTTPS for remote worker URLs, and does not expose the token to the browser. Job tracking is in memory and is lost when the Node server restarts. This adapter is a connection layer, not a bundled GPU worker: actual video generation remains unavailable until a compatible worker is deployed and configured. The existing Wan/fal.ai route remains unchanged.
+
+The official LongCat demo scripts are research/demo entry points; review the upstream code and adapt the inference pipeline to accept user prompts before deploying a worker. Do not assume the upstream demo CLI is a ready-made production HTTP API.
+
 ## Deployment
 
 A Render Blueprint is included in `render.yaml` and defaults to the free web-service tier. In Render, create a new Blueprint Instance from this repository, then add your fal API key as the private `FAL_KEY` environment variable. Do not commit the key. Free hosting may sleep when idle and is not a production uptime guarantee. The server keeps active queue job handles in memory, so keep the same instance alive until a clip finishes.
