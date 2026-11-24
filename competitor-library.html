@@ -106,7 +106,9 @@ document.getElementById("refreshLiveCompetitors")?.addEventListener("click",asyn
  const btn=document.getElementById("refreshLiveCompetitors"),status=document.getElementById("liveFeedStatus"),cards=document.getElementById("liveFeedCards");
  btn.disabled=true;status.textContent="جاري جلب أحدث الفيديوهات من YouTube RSS…";
  try{
-  const response=await fetch("/api/competitors/latest"),data=await response.json();if(!response.ok)throw new Error(data.error||"تعذر التحديث");
+  let response=await fetch("./data/competitor-feed.json",{cache:"no-store"});
+  if(!response.ok)response=await fetch("/api/competitors/latest");
+  const data=await response.json();if(!response.ok)throw new Error(data.error||"تعذر التحديث");
   cards.innerHTML=(data.videos||[]).map(v=>'<article class="card"><h2>'+safeText(v.channel)+' — '+safeText(v.title)+'</h2><p class="muted">'+safeText(v.published||"")+'</p><a href="'+safeText(v.url)+'" target="_blank" rel="noopener">مشاهدة الفيديو الأصلي ↗</a></article>').join("");
   status.textContent="تم جلب "+data.videos.length+" فيديو حديث من "+data.channels_ok+" قناة من أصل "+data.channels_total+". "+(data.cached?"(نتيجة مخزنة مؤقتاً)":"");
   if(data.channels_failed?.length)status.textContent+=" القنوات التي لم تستجب: "+data.channels_failed.join("، ");
