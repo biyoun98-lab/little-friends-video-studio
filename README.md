@@ -11,6 +11,12 @@ A production workspace for original preschool videos (ages 2–6).
 - SRT captions, production brief, draft saving and YouTube/TikTok metadata package.
 - A server health endpoint for deployment checks.
 
+## Automated checks
+
+GitHub Actions runs backend and browser-script syntax checks plus Node smoke tests. The smoke tests start the real Express server on an ephemeral local port and verify the health endpoint, safe AI-disabled responses when `FAL_KEY` is absent, and delivery of the studio homepage with its core production controls.
+
+Run the checks locally with `npm install` followed by `npm test`.
+
 ## Run locally
 1. Use Node.js 20+.
 2. Copy `.env.example` to `.env`, then set `FAL_KEY` in the server environment.
