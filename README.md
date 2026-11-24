@@ -29,3 +29,18 @@ A free browser-based production studio for original preschool cartoon videos (ag
 - Three-episode publishing pack with YouTube Made for Kids metadata, TikTok captions and per-episode filenames; publishing hub links to Metricool, YouTube Studio and TikTok Studio. Automatic publishing still requires video files hosted at a public media URL and a supported publishing connection; the studio does not claim uploads have happened.
 - Free public YouTube competitor feed: a GitHub Actions job refreshes recent public uploads from 27 researched competitor channels (all tracked by fixed public channel IDs) through YouTube RSS every six hours, without an API key. RSS exposes a limited recent feed (up to 15 items per channel), not the complete historical archive. The studio reads the generated JSON feed, so the feature can work on static hosting as well as the optional Node server.
 - No paid AI generation service, API key or credit is required for the free browser renderer.
+
+
+## FreeLLMAPI AI story engine
+
+The studio can use a self-hosted [FreeLLMAPI](https://freellmapi.co/) gateway as its primary AI **story-writing** engine. The existing browser renderer remains responsible for exporting the video locally; connecting FreeLLMAPI does not by itself provide cloud video generation.
+
+Configure these environment variables on the machine running `server.js`:
+
+- `FREELLMAPI_BASE_URL`: OpenAI-compatible base URL, default `http://127.0.0.1:3001/v1`.
+- `FREELLMAPI_API_KEY`: unified key copied from the FreeLLMAPI dashboard. Keep it server-side; never commit it or put it in browser code.
+- `FREELLMAPI_MODEL`: optional model or routing strategy, default `auto`.
+
+Start FreeLLMAPI and add at least one provider key in its dashboard, then start the studio server with those environment variables. The studio's **FreeLLMAPI · AI story engine** panel checks whether the key is configured and can generate a four-scene preschool story. The API key is sent only from the studio server to the gateway. If the gateway is hosted separately, set `FREELLMAPI_BASE_URL` to a URL reachable from the studio server and protect that gateway with HTTPS and its unified key.
+
+Useful checks: `GET /api/ai/status` reports configuration status without returning the key; `POST /api/ai/story` calls the gateway's `/chat/completions` endpoint. Live generation requires a running gateway and working upstream provider credentials. Free provider quotas and availability are not guaranteed.
