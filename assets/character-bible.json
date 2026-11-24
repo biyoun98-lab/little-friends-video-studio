@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "style": "soft, colorful preschool clay-style 3D animation; gentle expressions and rounded child-friendly shapes",
+  "characters": {
+    "Leo": {
+      "species": "lion cub",
+      "fur": "warm golden",
+      "face": "soft rounded muzzle, large kind brown eyes",
+      "signature_outfit": "bright red vest",
+      "continuity_rule": "Keep the same face, fur color, proportions, and bright red vest in every scene."
+    },
+    "Mimi": {
+      "species": "little white bunny",
+      "fur": "soft white",
+      "face": "large kind eyes and long soft ears",
+      "signature_outfit": "pink dress and matching pink bow",
+      "continuity_rule": "Keep the same face, white fur, proportions, pink dress, and matching pink bow in every scene."
+    },
+    "Bobo": {
+      "species": "small elephant",
+      "skin": "friendly blue",
+      "features": "rounded body and short curved trunk",
+      "continuity_rule": "Keep the same blue color, rounded proportions, and short curved trunk in every scene."
+    }
+  },
+  "global_rules": [
+    "Do not redesign characters between scenes.",
+    "Do not change signature clothing or accessories.",
+    "Use gentle, safe, age-appropriate actions for preschool children.",
+    "Avoid scary expressions, violence, dangerous imitation, flashing lights, and text embedded in generated frames."
+  ]
+}
