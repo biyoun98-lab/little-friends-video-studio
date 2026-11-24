@@ -49,5 +49,15 @@ You can also open `index.html` directly in a modern browser; rendering and downl
 - The studio prepares platform metadata but does not upload or publish automatically. Social account connection and publication are not enabled; review and upload the rendered video manually through the platform or a connected scheduler.
 - The render runs on the device; long videos may take time and require the browser tab to remain open.
 
+## Automated quality checks
+
+Run the static studio checks locally with:
+
+```bash
+npm test
+```
+
+GitHub Actions runs the same checks on every push to `main` and on pull requests. The checks validate required studio controls, parse the embedded application JavaScript, and confirm the production and health-check functions are present. These are static smoke checks; they do not replace rendering a real video in a supported browser and reviewing its audio, captions, and visuals.
+
 ## Child safety
 Use gentle language and age-appropriate themes. Avoid frightening imagery, dangerous imitation, bullying, personal-data requests and manipulative calls to action. Review every video before publishing.
