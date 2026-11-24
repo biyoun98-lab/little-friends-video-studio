@@ -24,6 +24,9 @@ A free browser-based production studio for original preschool cartoon videos (ag
 - Animated scene details include drifting clouds, swaying flowers, gentle character arm gestures and Bobo's moving trunk.
 - Stronger pre-render quality checks for story structure, scene directions, consistent characters, repetitive dialogue and child-safety wording.
 - SRT captions, production brief, saved drafts and YouTube/TikTok metadata package.
+- Competitor research library: 19 relevant YouTube channels matched to the connected Little Friends World channel, plus 10 recent high-performing Instagram/TikTok short-form examples with source links, observed hooks and original adaptation ideas. Search, filter, add personal reference links and export the saved library as JSON.
+- Five new original story templates inspired by broad competitor mechanisms (alphabet-animal learning, action songs, animal rhyme parade, color-painting activity and morning routine) without copying source scripts, characters, music or footage.
+- Three-episode publishing pack with YouTube Made for Kids metadata, TikTok captions and per-episode filenames; publishing hub links to Metricool, YouTube Studio and TikTok Studio.
 - No paid AI service, API key, subscription or generation credits required.
 
 ## Run locally
@@ -48,7 +51,7 @@ You can also open `index.html` directly in a modern browser; rendering and downl
 - This is original 2D canvas animation featuring Leo, Mimi and Bobo, not photorealistic AI-generated 3D video. MP4 availability depends on browser MediaRecorder support; WebM is the fallback.
 - Device speech preview is for listening only. The generated instrumental soundtrack is embedded automatically during rendering. To include spoken narration, record or prepare an audio file on your phone, load it in the optional narration field, and render; audio mixing is performed locally in the browser.
 - Learning songs use original written lyrics and browser speech preview; the studio does not generate a full musical backing track. Add properly licensed music in a free editor if desired.
-- The studio prepares platform metadata but does not upload or publish automatically. Social account connection and publication are not enabled; review and upload the rendered video manually through the platform or a connected scheduler.
+- The browser page prepares platform metadata and export packs but does not directly upload or publish. The YouTube and TikTok accounts are connected in the external publishing integrations; automatic publishing from the website itself requires a secure server-side integration and credentials. Never put passwords or API secrets in browser code. The assistant can use the connected publishing workflow after the rendered video files are supplied and the exact post is approved.
 - The render runs on the device; long videos may take time and require the browser tab to remain open.
 
 ## Automated quality checks
