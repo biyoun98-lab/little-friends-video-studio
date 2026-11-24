@@ -34,9 +34,9 @@ A free browser-based production studio for original preschool cartoon videos (ag
 The studio can submit a short 5- or 10-second vertical draft to fal.ai using the H3 Max Turbo text-to-video endpoint. The API key is read only by the server and is never sent to browser code.
 
 1. Create a fal.ai API key in your fal account.
-2. Set `FAL_KEY` as a private environment variable in your hosting provider (for Render, open the service's Environment settings and add `FAL_KEY`). Do not commit a real key or paste it into the website.
+2. Set `FAL_KEY` and a strong private `AI_ACCESS_CODE` as environment variables in your hosting provider (for Render, open the service's Environment settings and add both). Enter the access code in the studio's AI panel. Do not commit either secret or paste the fal key into the website.
 3. Open the studio, confirm the paid-generation notice, submit one draft, then check its status and review the returned video.
-4. Current connected-account rate reference is approximately $0.01875 per second (about $0.094 for 5 seconds); final charges can differ by settings, minimums and rounding. The website limits each request to 5 or 10 seconds and one request per minute as a safety guard.
+4. Current connected-account rate reference is approximately $0.01875 per second (about $0.094 for 5 seconds); final charges can differ by settings, minimums and rounding. The website limits each request to 5 or 10 seconds, one request per minute per IP, and three drafts per server day. The AI panel also requires the private access code and a paid-generation confirmation.
 
 This is a text-to-video draft only. Character identity is not guaranteed from text prompts. Reference-image conditioning and multi-scene episode assembly are future steps; do not treat one generated 5-second clip as a complete episode.
 
@@ -59,7 +59,7 @@ You can also open `index.html` directly in a modern browser; rendering and downl
 8. Review each final file, then upload manually to YouTube and TikTok.
 
 ## Limitations
-- Optional cloud AI video generation requires a private FAL_KEY and incurs provider charges. If no key is configured, the cloud AI controls remain unavailable and the free local renderer continues to work.
+- Optional cloud AI video generation requires private FAL_KEY and AI_ACCESS_CODE settings and incurs provider charges. If no key is configured, the cloud AI controls remain unavailable and the free local renderer continues to work.
 - This is original 2D canvas animation featuring Leo, Mimi and Bobo, not photorealistic AI-generated 3D video. MP4 availability depends on browser MediaRecorder support; WebM is the fallback.
 - Device speech preview is for listening only. The generated instrumental soundtrack is embedded automatically during rendering. To include spoken narration, record or prepare an audio file on your phone, load it in the optional narration field, and render; audio mixing is performed locally in the browser.
 - Learning songs use original written lyrics and browser speech preview; the studio does not generate a full musical backing track. Add properly licensed music in a free editor if desired.
