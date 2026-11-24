@@ -35,7 +35,13 @@ assert.match(html, /madeForKids:true/, "YouTube child-directed publishing metada
 assert.match(html, /TikTok Studio/, "TikTok publishing destination is missing.");
 assert.match(html, /Metricool Planner/, "Metricool publishing workflow link is missing.");
 assert.ok(html.includes("refreshCompetitors"), "Free competitor RSS refresh control is missing.");
-assert.ok(!html.includes("aiGenerate")&&!html.includes("fal.ai")&&!html.includes("FAL_KEY"), "Paid AI generation controls must be absent from the free edition.");
+assert.match(html, /id="aiGenerate"/, "FreeLLMAPI AI story generation control is missing.");
+assert.match(html, /async function generateAiStory/, "FreeLLMAPI client integration is missing.");
+assert.match(server, /app.post\("\/api\/ai\/story"/, "Secure FreeLLMAPI server proxy is missing.");
+assert.match(server, /FREELLMAPI_API_KEY/, "FreeLLMAPI server key configuration is missing.");
+assert.match(server, /chat\/completions/, "FreeLLMAPI OpenAI-compatible chat endpoint is missing.");
+assert.ok(!html.includes("FREELLMAPI_API_KEY=")&&!html.includes("freellmapi-"), "API secrets must never be embedded in browser source.");
+assert.ok(!html.includes("fal.ai")&&!html.includes("FAL_KEY"), "The free edition must not expose Fal paid AI controls.");
 assert.ok(server.includes("youtube.com/feeds/videos.xml"), "Free public YouTube RSS integration is missing.");
 assert.ok(competitorHtml.includes("data/competitor-feed.json"), "Competitor library must load the static scheduled feed.");
 assert.match(competitorHtml, /refreshLiveCompetitors/, "Live competitor feed refresh control is missing.");
