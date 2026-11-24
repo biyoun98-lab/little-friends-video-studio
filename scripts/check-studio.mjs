@@ -37,6 +37,8 @@ assert.match(html, /Metricool Planner/, "Metricool publishing workflow link is m
 assert.ok(html.includes("refreshCompetitors"), "Free competitor RSS refresh control is missing.");
 assert.ok(!html.includes("aiGenerate")&&!html.includes("fal.ai")&&!html.includes("FAL_KEY"), "Paid AI generation controls must be absent from the free edition.");
 assert.ok(server.includes("youtube.com/feeds/videos.xml"), "Free public YouTube RSS integration is missing.");
+assert.ok(competitorHtml.includes("data/competitor-feed.json"), "Competitor library must load the static scheduled feed.");
+assert.match(competitorHtml, /refreshLiveCompetitors/, "Live competitor feed refresh control is missing.");
 assert.ok(server.includes("CACHE_MS=15*60*1000"), "Competitor RSS requests must be cached.");
 assert.ok(server.includes("competitorChannels=["), "Curated competitor channel IDs are missing.");
 assert.ok(server.includes("competitorHandles=["), "Major competitor channels must be included in the free RSS feed.");
