@@ -91,6 +91,17 @@ test("server smoke tests", async t => {
     assert.equal(response.status, 503);
   });
 
+  await t.test("server exposes only the intended public files", async () => {
+    const privatePaths = ["/server.js", "/package.json", "/test/server.test.js", "/docs/FREE_TIER_DEPLOYMENT.md"];
+    for (const path of privatePaths) {
+      const response = await fetch(baseUrl + path);
+      assert.equal(response.status, 404, path + " must not be publicly served");
+    }
+    const bible = await fetch(baseUrl + "/assets/character-bible.json");
+    assert.equal(bible.status, 200);
+    assert.match(await bible.text(), /"Leo"/);
+  });
+
   await t.test("homepage serves the studio and its core production tools", async () => {
     const response = await fetch(baseUrl + "/");
     assert.equal(response.status, 200);
