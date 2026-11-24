@@ -27,10 +27,10 @@ Never put the fal API key in browser code or commit a real key to GitHub. The ap
 5. Review each clip for character consistency, child safety, visual artifacts and audio/text. The model call disables generated audio; add reviewed narration/music in an editor with properly licensed assets.
 6. Export captions and publishing metadata. Download and manually upload the approved video to YouTube/TikTok.
 
-## Important limitations\n- Competitor analysis currently works from public example URLs and pattern notes entered by the user; it does not automatically crawl TikTok/YouTube or retrieve competitor analytics.\n- The daily batch planner generates three original storyboards and a JSON export; it does not yet batch-render three finished episodes in one click.
+## Important limitations\n- Competitor analysis currently works from public example URLs and pattern notes entered by the user; it does not automatically crawl TikTok/YouTube or retrieve competitor analytics.\n- The daily batch planner generates three original storyboards and a JSON export; it batch-renders three storyboard-card videos in sequence, but does not yet produce full character animation, voiceover, or automatically publish.
 - Character consistency is encouraged by repeating the character bible, but text-to-video alone cannot guarantee identical characters across separate clips. A reference-image workflow is a future enhancement.
 - The current AI path generates one scene clip per confirmed request; it does not automatically stitch clips, generate voiceover, create thumbnails, or publish to social accounts.
-- The in-browser WebM renderer makes storyboard cards, not full AI animation. The new three-episode batch planner creates three editable storyboards; each still needs to be loaded and rendered separately.
+- The in-browser WebM renderer makes storyboard cards, not full AI animation. The three-episode batch planner creates three editable storyboards and can sequentially render and download three WebM storyboard-card videos in a supported browser. It still does not create full AI character animation.
 - Queue job tracking is in server memory; keep a single server instance during generation. For multi-instance production, use a persistent job store.
 
 ## Deployment
