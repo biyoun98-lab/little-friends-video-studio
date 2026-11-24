@@ -14,7 +14,7 @@ function longcatBase(){
  const u=new URL(LONGCAT_API_URL);
  if(u.protocol!=="https:" && !(u.protocol==="http:" && ["localhost","127.0.0.1"].includes(u.hostname)))throw new Error("LONGCAT_API_URL must use HTTPS (HTTP is allowed only for localhost).");
  if(u.username||u.password)throw new Error("Do not put credentials inside LONGCAT_API_URL.");
- return u.href.replace(/\\/$/,"");
+ return u.href.replace(/\/$/,"");
 }
 function longcatHeaders(){return {"Content-Type":"application/json",...(LONGCAT_API_TOKEN?{"Authorization":"Bearer "+LONGCAT_API_TOKEN}:{})}}
 
