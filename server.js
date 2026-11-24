@@ -72,5 +72,9 @@ app.get("/api/status",async(req,res)=>{try{
  if(!videoUrl)return res.status(502).json({error:"This model response did not contain a video URL."});
  jobs.delete(id);res.json({status:"COMPLETED",video_url:videoUrl});
  }catch(e){res.status(400).json({error:e.message})}});
-app.use(express.static("."));
+const INDEX_FILE=new URL("./index.html",import.meta.url);
+const ASSETS_DIR=new URL("./assets/",import.meta.url);
+app.get("/",(req,res)=>res.sendFile(INDEX_FILE.pathname));
+app.get("/index.html",(req,res)=>res.sendFile(INDEX_FILE.pathname));
+app.use("/assets",express.static(ASSETS_DIR.pathname,{dotfiles:"deny",index:false}));
 app.listen(PORT,()=>console.log("Little Friends Studio running on "+PORT));
