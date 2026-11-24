@@ -21,6 +21,8 @@ for (const [index, source] of inlineScripts.entries()) {
   assert.doesNotThrow(() => new vm.Script(source), `Inline script ${index + 1} has a syntax error.`);
 }
 
+assert.match(html, /function\s+saveDraft\s*\(/, "Automatic local draft saving is missing.");
+assert.match(html, /addEventListener\("pagehide"/, "Draft persistence on page exit is missing.");
 for (const name of ["generateDailyBatch", "renderAllBatch", "renderVideo", "runQualityCheck", "preferredMimeType", "videoExtension"]) {
   assert.match(html, new RegExp("function\\s+" + name + "\\s*\\("), `Missing production function: ${name}`);
 }
