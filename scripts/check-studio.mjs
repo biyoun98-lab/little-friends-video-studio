@@ -35,12 +35,11 @@ assert.match(html, /madeForKids:true/, "YouTube child-directed publishing metada
 assert.match(html, /TikTok Studio/, "TikTok publishing destination is missing.");
 assert.match(html, /Metricool Planner/, "Metricool publishing workflow link is missing.");
 assert.ok(html.includes("refreshCompetitors"), "Free competitor RSS refresh control is missing.");
+assert.ok(!html.includes("aiGenerate")&&!html.includes("fal.ai")&&!html.includes("FAL_KEY"), "Paid AI generation controls must be absent from the free edition.");
 assert.ok(server.includes("youtube.com/feeds/videos.xml"), "Free public YouTube RSS integration is missing.");
 assert.ok(server.includes("CACHE_MS=15*60*1000"), "Competitor RSS requests must be cached.");
 assert.ok(server.includes("competitorChannels=["), "Curated competitor channel IDs are missing.");
 assert.ok(!html.includes("fal.ai")&&!html.includes("FAL_KEY")&&!html.includes("Cloud AI video engine"), "The free edition must not expose paid AI controls.");
-assert.match(server, /const AI_ENDPOINT="minimax\/h3-max-turbo\/text-to-video"/, "Optional H3 Max Turbo AI engine must be identified.");
-assert.match(server, /Authorization:"Key "\+process\.env\.FAL_KEY/, "fal API key must remain server-side.");
 assert.match(server, /api\/ai\/video\/:requestId/, "AI job status endpoint is missing.");
 assert.match(html, /Alphabet Animal Safari/, "Alphabet competitor-inspired original episode is missing.");
 assert.match(html, /Move and Freeze with Mimi/, "Movement-song competitor-inspired original episode is missing.");
