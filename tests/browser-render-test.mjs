@@ -46,7 +46,7 @@ try {
   assert.ok(audio, "export must contain the generated music audio stream");
   assert.equal(video.width, 1080, "portrait export width");
   assert.equal(video.height, 1920, "portrait export height");
-  assert.ok(Number(media.format.duration) >= 2.5, "exported clip should be close to the requested 3 seconds");
+  assert.ok(Number(media.format.duration) >= 3.0, "exported clip should preserve at least the requested 3 seconds");
   assert.ok(Number(media.format.size) > 10000, "exported file should contain real media data");
   console.log(JSON.stringify({ result: "PASS", file: download.suggestedFilename(), durationSeconds: media.format.duration, bytes: media.format.size, video: { width: video.width, height: video.height }, audio: audio.codec_type }, null, 2));
 } finally {
