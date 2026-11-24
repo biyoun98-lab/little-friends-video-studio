@@ -96,6 +96,9 @@ test("server smoke tests", async t => {
     assert.equal(response.status, 200);
     const html = await response.text();
     assert.match(html, /Little Friends Video Studio/);
+    assert.match(html, /viewport-fit=cover/);
+    assert.match(html, /@media\(max-width:520px\)/);
+    assert.match(html, /نسخة محسّنة للهاتف/);
     assert.match(html, /LongCat-Video/);
     assert.match(html, /Create 3 episodes/);
     assert.match(html, /Render all 3 episodes/);
