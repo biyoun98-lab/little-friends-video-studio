@@ -292,4 +292,20 @@ async function refreshCompetitorFeed(){
 }
 function escapeHtml(value){return String(value??"").replace(/[&<>"']/g,ch=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[ch]));}
 $("refreshCompetitors")?.addEventListener("click",refreshCompetitorFeed);
+
+async function refreshCompetitorFeed(){
+ const button=$("refreshCompetitors"),status=$("competitorFeedStatus"),feed=$("competitorFeed");
+ button.disabled=true;status.textContent="جاري جلب أحدث الفيديوهات العامة من قنوات المنافسين…";
+ try{
+  const response=await fetch("/api/competitors/latest");const data=await response.json();
+  if(!response.ok)throw new Error(data.error||"تعذر جلب الفيديوهات");
+  const videos=data.videos||[];
+  feed.innerHTML=videos.map(v=>'<article class="panel"><h3>'+escapeHtml(v.channel)+' — '+escapeHtml(v.title)+'</h3><p class="muted">'+escapeHtml(v.published||"تاريخ غير متاح")+'</p><a href="'+escapeHtml(v.url)+'" target="_blank" rel="noopener">مشاهدة الفيديو الأصلي ↗</a></article>').join("");
+  status.textContent="تم جلب "+videos.length+" فيديو حديث من "+data.channels_ok+" قناة، من أصل "+data.channels_total+" قناة. آخر تحديث: "+new Date(data.fetched_at).toLocaleString();
+  if(data.channels_failed?.length)status.textContent+=" · لم تستجب "+data.channels_failed.length+" قناة في هذا التحديث.";
+ }catch(error){status.textContent="تعذر التحديث: "+error.message+". افتح مكتبة المنافسين لمشاهدة الروابط المحفوظة.";}
+ finally{button.disabled=false;}
+}
+function escapeHtml(value){return String(value??"").replace(/[&<>"']/g,ch=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[ch]));}
+$("refreshCompetitors")?.addEventListener("click",refreshCompetitorFeed);
 </script></body></html>
