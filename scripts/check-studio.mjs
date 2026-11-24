@@ -37,6 +37,10 @@ assert.match(html, /Metricool Planner/, "Metricool publishing workflow link is m
 assert.match(html, /Alphabet Animal Safari/, "Alphabet competitor-inspired original episode is missing.");
 assert.match(html, /Move and Freeze with Mimi/, "Movement-song competitor-inspired original episode is missing.");
 assert.match(html, /The Animal Goodbye Parade/, "Animal-rhyme competitor-inspired original episode is missing.");
+assert.match(html, /pickFrom\("education"\)/, "Mixed daily batches must include an education episode.");
+assert.match(html, /pickFrom\("tips"\)/, "Mixed daily batches must include a good-habits episode.");
+assert.match(html, /thirdGroups=shuffleArray/, "The third daily episode must rotate across additional learning themes.");
+assert.match(html, /validateDailyBatch\(batch\.map/, "The three drafts must pass preflight before the daily batch is saved.");
 
 const libraryMatch = html.match(/const episodeLibrary=(\[[\s\S]*?\n\]);/);
 assert.ok(libraryMatch, "Episode template library could not be found.");
