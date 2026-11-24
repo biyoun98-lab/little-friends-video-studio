@@ -26,3 +26,5 @@ jobs:
         run: node --check server.js
       - name: Run tests
         run: npm test
+      - name: Verify Cloudflare static build
+        run: npm run build:cloudflare
