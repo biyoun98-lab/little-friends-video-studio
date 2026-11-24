@@ -37,7 +37,7 @@ try {
   const output = resolve("artifacts", download.suggestedFilename());
   await download.saveAs(output);
 
-  const probe = spawnSync("ffprobe", ["-v", "error", "-show_entries", "format=duration,size:stream=codec_type,width,height", "-of", "json", output], { encoding: "utf8" });
+  const probe = spawnSync("ffprobe", ["-v", "error", "-count_frames", "-show_entries", "format=duration,size:stream=codec_type,width,height,duration,nb_read_frames,r_frame_rate", "-of", "json", output], { encoding: "utf8" });
   assert.equal(probe.status, 0, "ffprobe must parse the exported video: " + probe.stderr);
   const media = JSON.parse(probe.stdout);
   const video = media.streams.find(stream => stream.codec_type === "video");
@@ -46,7 +46,10 @@ try {
   assert.ok(audio, "export must contain the generated music audio stream");
   assert.equal(video.width, 1080, "portrait export width");
   assert.equal(video.height, 1920, "portrait export height");
-  assert.ok(Number(media.format.duration) >= 2.5, "browser container timestamps may trim a small tail; export should remain within 0.5 seconds of the requested 3 seconds: " + media.format.duration);
+  const frameRate = video.r_frame_rate ? video.r_frame_rate.split("/").map(Number) : [24, 1];
+  const decodedDuration = Number(video.nb_read_frames) / (frameRate[1] ? frameRate[0] / frameRate[1] : 24);
+  const measuredDuration = Number(media.format.duration || video.duration || decodedDuration);
+  assert.ok(Number.isFinite(measuredDuration) && measuredDuration >= 2.5, "decoded video frames should cover at least 2.5 seconds; measured duration: " + measuredDuration + "; stream: " + JSON.stringify(video));
   assert.ok(renderDiagnostics.frameCount >= 60, "renderer should draw at least 60 frames for the 3-second test: " + JSON.stringify(renderDiagnostics));
   assert.ok(renderDiagnostics.elapsedSeconds >= 3.0, "renderer wall-clock duration should reach the requested 3 seconds: " + JSON.stringify(renderDiagnostics));
   assert.ok(Number(media.format.size) > 10000, "exported file should contain real media data");
