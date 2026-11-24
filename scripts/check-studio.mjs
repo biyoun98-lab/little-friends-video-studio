@@ -23,7 +23,7 @@ for (const [index, source] of inlineScripts.entries()) {
 
 assert.match(html, /function\s+saveDraft\s*\(/, "Automatic local draft saving is missing.");
 assert.match(html, /addEventListener\("pagehide"/, "Draft persistence on page exit is missing.");
-for (const name of ["generateDailyBatch", "renderAllBatch", "renderVideo", "runQualityCheck", "preferredMimeType", "videoExtension"]) {
+for (const name of ["generateDailyBatch", "renderAllBatch", "renderVideo", "runQualityCheck", "drawStoryVisual", "preferredMimeType", "videoExtension"]) {
   assert.match(html, new RegExp("function\\s+" + name + "\\s*\\("), `Missing production function: ${name}`);
 }
 assert.match(server, /\/api\/health/, "Health endpoint is missing.");
