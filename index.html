@@ -53,7 +53,37 @@ const episodeLibrary=[
 
 ];
 function makeAutoStory(){const type=$("contentType")?$("contentType").value:"all";const pool=episodeLibrary.filter(x=>type==="all"||x.type===type);const chosen=pool[Math.floor(Math.random()*pool.length)];$("title").value=chosen.title;$("lesson").value=chosen.goal;$("description").value="Join Leo, Mimi and Bobo in “"+chosen.title+"” — a gentle preschool episode about "+chosen.goal.toLowerCase()+". Made for little learners ages 2–6."; $("scenes").innerHTML="";chosen.scenes.forEach(addScene);makeBrief();$("voiceStatus").textContent="New "+chosen.type+" episode created. Edit the scenes, then preview and render."}
-function generateDailyBatch(){const type=$("contentType")?$("contentType").value:"all";const pool=episodeLibrary.filter(x=>type==="all"||x.type===type);if(pool.length<3){$("voiceStatus").textContent="Not enough distinct templates for a three-video batch in this category.";return}let recent=[];try{recent=JSON.parse(localStorage.getItem("lfws-recent-episodes")||"[]")}catch(e){}const fresh=pool.filter(item=>!recent.includes(item.title));const source=fresh.length>=3?fresh:pool;const shuffled=source.slice().sort(()=>Math.random()-.5);let selected;if(type==="all"){const chosenGroups=["education","tips","feelings","discovery","problem","colors","songs"];selected=[];for(const group of chosenGroups){const candidate=shuffled.find(item=>item.type===group&&!selected.includes(item));if(candidate)selected.push(candidate);if(selected.length===3)break}if(selected.length<3)selected=shuffled.slice(0,3)}else selected=shuffled.slice(0,3);const batch=selected.map(chosen=>({type:chosen.type,title:chosen.title,learningGoal:chosen.goal,description:"Join Leo, Mimi and Bobo in “"+chosen.title+"” — an original preschool story about "+chosen.goal.toLowerCase()+". Includes a question for little learners and a clear positive ending. Made for ages 2–6.",language:$("lang").value,ageGroup:$("age").value,durationSeconds:Number($("duration").value),characters:$("characters").value,scenes:chosen.scenes}));const payload={createdAt:new Date().toISOString(),channel:"Little Friends World",dailyTarget:3,editorialMix:[...new Set(batch.map(e=>e.type))],episodes:batch};localStorage.setItem("lfws-daily-batch",JSON.stringify(payload));localStorage.setItem("lfws-recent-episodes",JSON.stringify([...batch.map(e=>e.title),...recent].slice(0,12)));const first=batch[0];$("title").value=first.title;$("lesson").value=first.learningGoal;$("description").value=first.description;$("scenes").innerHTML="";first.scenes.forEach(addScene);makeBrief();download(new Blob([JSON.stringify(payload,null,2)],{type:"application/json"}),"little-friends-daily-3-episode-batch.json");$("voiceStatus").textContent="Three fresh episodes created with varied topics and reduced repeats. Review, then render all three."}
+function shuffleArray(items){const copy=items.slice();for(let i=copy.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[copy[i],copy[j]]=[copy[j],copy[i]]}return copy}
+function generateDailyBatch(){
+const type=$("contentType")?$("contentType").value:"all";
+const pool=episodeLibrary.filter(x=>type==="all"||x.type===type);
+if(pool.length<3){$("voiceStatus").textContent="Not enough distinct templates for a three-video batch in this category.";return}
+let recent=[];try{recent=JSON.parse(localStorage.getItem("lfws-recent-episodes")||"[]")}catch(e){}
+const fresh=pool.filter(item=>!recent.includes(item.title));
+const source=fresh.length>=3?fresh:pool;
+const shuffled=shuffleArray(source);
+let selected=[];
+if(type==="all"){
+const pickFrom=group=>shuffled.find(item=>item.type===group&&!selected.includes(item));
+const required=[pickFrom("education"),pickFrom("tips")].filter(Boolean);
+selected.push(...required);
+const thirdGroups=shuffleArray(["colors","songs","feelings","discovery","problem"]);
+const third=thirdGroups.map(pickFrom).find(Boolean);
+if(third)selected.push(third);
+}
+for(const item of shuffled){if(selected.length===3)break;if(!selected.includes(item))selected.push(item)}
+selected=selected.slice(0,3);
+if(selected.length!==3){$("voiceStatus").textContent="Could not prepare three distinct episodes. Choose another content category.";return}
+const batch=selected.map(chosen=>({type:chosen.type,title:chosen.title,learningGoal:chosen.goal,description:"Join Leo, Mimi and Bobo in “"+chosen.title+"” — an original preschool story about "+chosen.goal.toLowerCase()+". Includes a question for little learners and a clear positive ending. Made for ages 2–6.",language:$("lang").value,ageGroup:$("age").value,durationSeconds:Number($("duration").value),characters:$("characters").value,scenes:chosen.scenes}));
+const batchIssues=validateDailyBatch(batch.map(ep=>({...ep,durationSeconds:ep.durationSeconds})));
+if(batchIssues.length){$("voiceStatus").textContent="The new batch did not pass preflight: "+batchIssues.join(" ");return}
+const payload={createdAt:new Date().toISOString(),channel:"Little Friends World",dailyTarget:3,editorialMix:[...new Set(batch.map(e=>e.type))],episodes:batch};
+localStorage.setItem("lfws-daily-batch",JSON.stringify(payload));
+localStorage.setItem("lfws-recent-episodes",JSON.stringify([...batch.map(e=>e.title),...recent].slice(0,12)));
+const first=batch[0];$("title").value=first.title;$("lesson").value=first.learningGoal;$("description").value=first.description;$("scenes").innerHTML="";first.scenes.forEach(addScene);makeBrief();
+download(new Blob([JSON.stringify(payload,null,2)],{type:"application/json"}),"little-friends-daily-3-episode-batch.json");
+$("voiceStatus").textContent="Three distinct episodes passed the batch preflight: "+batch.map((ep,i)=>(i+1)+". "+ep.title).join(" · ")+". Review, then render all three.";
+}
 function narrationText(){return sceneData().filter(s=>s.some(v=>v.trim())).map((s,i)=>"Scene "+(i+1)+". "+s[0]+". "+s[1]).join(". ")}
 function loadCharacterVoices(){if(!("speechSynthesis" in window))return;const voices=window.speechSynthesis.getVoices();if(!voices.length)return;["leoVoice","mimiVoice","boboVoice"].forEach(id=>{const select=$(id);if(!select||select.dataset.loaded==="1")return;voices.forEach((v,i)=>{const option=document.createElement("option");option.value=String(i);option.textContent=v.name+" ("+v.lang+")";select.append(option)});select.dataset.loaded="1"})}
 function speakerFor(line){const m=line.match(/^\s*(Leo|Lion|ليو|Mimi|ميمي|Bobo|بوبو)\s*:\s*(.*)$/i);if(m)return {who:/^(Leo|Lion|ليو)$/i.test(m[1])?"leo":/^(Mimi|ميمي)$/i.test(m[1])?"mimi":"bobo",text:m[2]};return {who:"narrator",text:line}}
