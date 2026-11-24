@@ -6,7 +6,7 @@ A free browser-based production studio for original preschool cartoon videos (ag
 - Episode details, learning objectives, character descriptions and editable storyboard.
 - Automatic local draft saving while editing, including storyboard changes; drafts are restored when the studio is reopened on the same device and browser.
 - One-click generator for original, child-safe preschool story templates featuring Leo, Mimi and Bobo.
-- Daily batch builder that creates three distinct episode drafts and downloads a structured JSON production batch. The mixed-topic mode guarantees coverage of education, good habits/tips, colors, and original learning songs.
+- Daily batch builder that creates three distinct episode drafts and downloads a structured JSON production batch. Mixed-topic mode includes one education episode, one good-habits/tips episode, and a rotating third theme from colors, original songs, feelings, discovery or simple problem-solving.
 - One-click sequential rendering of the saved three-episode batch, with each video downloaded separately and progress reporting.
 - Full-batch preflight validation before the first render: checks all three episode records, four-scene structure, required story/visual fields, character continuity, dialogue length, child-safety wording, duration bounds and duplicate titles. A failed preflight stops the batch before any video is rendered.
 - Built-in device speech preview for the episode narration (voice availability depends on the browser/device).
