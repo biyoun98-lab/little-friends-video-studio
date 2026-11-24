@@ -1,18 +1,9 @@
 {
-  "updated_at": "2026-11-24T01:07:47.971Z",
+  "updated_at": "2026-11-24T01:08:54.713Z",
   "source": "YouTube public RSS feeds",
   "channels_total": 27,
-  "channels_ok": 19,
-  "channels_failed": [
-    "Cocomelon – Nursery Rhymes",
-    "Super Simple Songs",
-    "Ms Rachel – Toddler Learning Videos",
-    "Numberblocks",
-    "Pinkfong – Baby Shark",
-    "BabyBus",
-    "Little Baby Bum",
-    "ChuChu TV"
-  ],
+  "channels_ok": 27,
+  "channels_failed": [],
   "videos": [
     {
       "channel": "Playful Animals",
@@ -99,6 +90,13 @@
       "videoId": "MhkpnR2lGYE"
     },
     {
+      "channel": "Super Simple Songs",
+      "title": "🔴 Celebrate the Holidays With Super Simple Live 🎄 | Best Christmas Kids Songs | Super Simple Songs",
+      "published": "2026-11-23T14:58:08+00:00",
+      "url": "https://www.youtube.com/watch?v=8m6aoIIuG2U",
+      "videoId": "8m6aoIIuG2U"
+    },
+    {
       "channel": "Playful Animals",
       "title": "Learn ABC Baby Bus 🚌🔤🌈 | Alphabet Song for Kids | Fun Preschool Learning & Educational Adventure",
       "published": "2026-11-23T14:30:09+00:00",
@@ -146,6 +144,13 @@
       "published": "2026-11-23T13:26:12+00:00",
       "url": "https://www.youtube.com/watch?v=l1E6yL17iXo",
       "videoId": "l1E6yL17iXo"
+    },
+    {
+      "channel": "Cocomelon – Nursery Rhymes",
+      "title": "Baby Shark! 🦈🦈 Fun Color Shark Game 🟢🔴🟡🔵 #cocomelon #kids #shorts",
+      "published": "2026-11-23T13:00:34+00:00",
+      "url": "https://www.youtube.com/watch?v=JXmeta0WF2k",
+      "videoId": "JXmeta0WF2k"
     },
     {
       "channel": "Bubble Toon TV",
@@ -197,6 +202,13 @@
       "videoId": "RGBQcpzw0QI"
     },
     {
+      "channel": "Numberblocks",
+      "title": "Let's Go to the Numberblocks Fair! | Numberblocks #shorts",
+      "published": "2026-11-23T11:00:04+00:00",
+      "url": "https://www.youtube.com/watch?v=-Q2wG_gJW6s",
+      "videoId": "-Q2wG_gJW6s"
+    },
+    {
       "channel": "Playful Animals",
       "title": "Learn Colors Baby Car 🚗🌈 | Fun Color Song for Kids | Preschool Learning & Educational Video",
       "published": "2026-11-23T11:00:04+00:00",
@@ -239,6 +251,20 @@
       "videoId": "9AWrk9k6La8"
     },
     {
+      "channel": "Little Baby Bum",
+      "title": "1 Potato, 2 Potato, How Many Potatoes? #short #LBB #nurseryrhymes",
+      "published": "2026-11-23T08:45:00+00:00",
+      "url": "https://www.youtube.com/watch?v=67pACIRr3pg",
+      "videoId": "67pACIRr3pg"
+    },
+    {
+      "channel": "BabyBus",
+      "title": "🔴LIVE | Let's Dig Construction Trucks | If You Dig It | Nursery Rhymes & Kids Songs | BabyBus",
+      "published": "2026-11-23T08:40:08+00:00",
+      "url": "https://www.youtube.com/watch?v=j98cXTs04hs",
+      "videoId": "j98cXTs04hs"
+    },
+    {
       "channel": "Indra Bikin Rusuh",
       "title": "Kena Razia, Indra Malah Pamer Sertifikat Akreditasi Calon Menantu! 😂 #shorts",
       "published": "2026-11-23T08:30:19+00:00",
@@ -251,6 +277,13 @@
       "published": "2026-11-23T06:27:26+00:00",
       "url": "https://www.youtube.com/watch?v=RQVEK0wLn1s",
       "videoId": "RQVEK0wLn1s"
+    },
+    {
+      "channel": "BabyBus",
+      "title": "🔴LIVE | Baby, Baby, Eating Ice Cream? | Johnny Johnny Yes Papa | Preschool Songs | BabyBus",
+      "published": "2026-11-23T05:38:24+00:00",
+      "url": "https://www.youtube.com/watch?v=8Dnmta0Zflg",
+      "videoId": "8Dnmta0Zflg"
     },
     {
       "channel": "Indra Bikin Rusuh",
@@ -293,6 +326,13 @@
       "published": "2026-11-23T00:15:36+00:00",
       "url": "https://www.youtube.com/watch?v=Dd6HMl7O2Ac",
       "videoId": "Dd6HMl7O2Ac"
+    },
+    {
+      "channel": "Pinkfong – Baby Shark",
+      "title": "Have You Ever Seen Santa's Beard? #santaclaus #christmas",
+      "published": "2026-11-22T23:00:14+00:00",
+      "url": "https://www.youtube.com/watch?v=zcss_4cS-EM",
+      "videoId": "zcss_4cS-EM"
     },
     {
       "channel": "ABC Luma",
@@ -365,6 +405,13 @@
       "videoId": "Nt9jsigvVTI"
     },
     {
+      "channel": "Cocomelon – Nursery Rhymes",
+      "title": "Where is Bingo? 🐶🔍 Can JJ Find His Puppy? Fun Toy Play #Kids #Shorts",
+      "published": "2026-11-22T13:00:37+00:00",
+      "url": "https://www.youtube.com/watch?v=VcJShnMFuLQ",
+      "videoId": "VcJShnMFuLQ"
+    },
+    {
       "channel": "Bubble Toon TV",
       "title": "What Was That Roar? 🦁 Meet Mr. Lion! #shorts",
       "published": "2026-11-22T13:00:01+00:00",
@@ -386,11 +433,25 @@
       "videoId": "yj9WYAmj-_M"
     },
     {
+      "channel": "Numberblocks",
+      "title": "Land of the Giants - Learning Huge Numbers! | Learn to Count for Kids Compilation | Numberblocks",
+      "published": "2026-11-22T12:00:15+00:00",
+      "url": "https://www.youtube.com/watch?v=SjBgjF_Nv84",
+      "videoId": "SjBgjF_Nv84"
+    },
+    {
       "channel": "Indra Bikin Rusuh",
       "title": "Kena Razia Gabungan, Indra Malah Bawa Ayah untuk Melamar Anak Komandan! 😂 #shorts",
       "published": "2026-11-22T11:30:05+00:00",
       "url": "https://www.youtube.com/watch?v=kOdzWRTRLdk",
       "videoId": "kOdzWRTRLdk"
+    },
+    {
+      "channel": "BabyBus",
+      "title": "Super Hot Potato | Safety Rules | Hot Vs Cold | Nursery Rhymes & Kids Songs | BabyBus",
+      "published": "2026-11-22T10:30:29+00:00",
+      "url": "https://www.youtube.com/watch?v=yj5hnQ45lT4",
+      "videoId": "yj5hnQ45lT4"
     },
     {
       "channel": "NVN KIDS TV",
@@ -405,6 +466,13 @@
       "published": "2026-11-22T09:03:35+00:00",
       "url": "https://www.youtube.com/watch?v=WRtxS6gVVYE",
       "videoId": "WRtxS6gVVYE"
+    },
+    {
+      "channel": "Little Baby Bum",
+      "title": "Counting 10 Colorful Buses 🎬✨ #short #LBB #nurseryrhymes",
+      "published": "2026-11-22T08:45:15+00:00",
+      "url": "https://www.youtube.com/watch?v=e5WlqzUGW8k",
+      "videoId": "e5WlqzUGW8k"
     },
     {
       "channel": "Indra Bikin Rusuh",
@@ -454,6 +522,13 @@
       "published": "2026-11-22T00:15:34+00:00",
       "url": "https://www.youtube.com/watch?v=FaYvLeKMEhQ",
       "videoId": "FaYvLeKMEhQ"
+    },
+    {
+      "channel": "Pinkfong – Baby Shark",
+      "title": "[Best of the Best] Kids' Favorite Christmas Episodes🎄 | Countdown to Christmas 2026 | Pinkfong",
+      "published": "2026-11-21T23:00:10+00:00",
+      "url": "https://www.youtube.com/watch?v=GKv_F4V8OiI",
+      "videoId": "GKv_F4V8OiI"
     },
     {
       "channel": "ABC Luma",
@@ -568,11 +643,25 @@
       "videoId": "iuE3PSzgtbg"
     },
     {
+      "channel": "Numberblocks",
+      "title": "Rainy Day Maths Fun! 🌧️| Learn to Count for Kids Compilation | Number Cartoon | Numberblocks",
+      "published": "2026-11-21T11:00:06+00:00",
+      "url": "https://www.youtube.com/watch?v=cPB2uaXpzS4",
+      "videoId": "cPB2uaXpzS4"
+    },
+    {
       "channel": "Indra Bikin Rusuh",
       "title": "Pakai Jas Hujan Saat Panas Terik, Indra Malah Mau Lindungi Polwan Cantik! 😂#shorts",
       "published": "2026-11-21T08:30:10+00:00",
       "url": "https://www.youtube.com/watch?v=EiDzZi4VbTY",
       "videoId": "EiDzZi4VbTY"
+    },
+    {
+      "channel": "Cocomelon – Nursery Rhymes",
+      "title": "Wheels on the Bus Challenge: JJ vs. Cody! | CoComelon Nursery Rhymes & Kids Songs",
+      "published": "2026-11-21T08:00:00+00:00",
+      "url": "https://www.youtube.com/watch?v=Gm_HjftxXKY",
+      "videoId": "Gm_HjftxXKY"
     },
     {
       "channel": "Bunny ABC Kids",
@@ -673,6 +762,20 @@
       "videoId": "Kpng0S_W6WI"
     },
     {
+      "channel": "Little Baby Bum",
+      "title": "It’s Your Happy Place! 🎈 #WorldChildrensDay | Little Baby Bum",
+      "published": "2026-11-20T13:00:21+00:00",
+      "url": "https://www.youtube.com/watch?v=Yvpolw98M_g",
+      "videoId": "Yvpolw98M_g"
+    },
+    {
+      "channel": "Cocomelon – Nursery Rhymes",
+      "title": "Let's Draw in the Snow! ❄️🎨 Easy Fun Winter Art with CoComelon #Kids #Shorts",
+      "published": "2026-11-20T13:00:14+00:00",
+      "url": "https://www.youtube.com/watch?v=mJ8Izr35hFk",
+      "videoId": "mJ8Izr35hFk"
+    },
+    {
       "channel": "Bee TV",
       "title": "Two Moons 🌕 Don't Blink Back 👁️",
       "published": "2026-11-20T12:39:58+00:00",
@@ -715,6 +818,20 @@
       "videoId": "rJA2vtMcnIU"
     },
     {
+      "channel": "Numberblocks",
+      "title": "Shapes for Kids - Squares, Circles, Triangles, & More! | Learn to Count for Kids | Numberblocks",
+      "published": "2026-11-20T11:00:27+00:00",
+      "url": "https://www.youtube.com/watch?v=zsoHcvAHyvM",
+      "videoId": "zsoHcvAHyvM"
+    },
+    {
+      "channel": "BabyBus",
+      "title": "Rain Rain Go Away (Dinosaurs Version) | Dinosaurs Song | Nursery Rhymes & Kids Songs | BabyBus",
+      "published": "2026-11-20T10:30:37+00:00",
+      "url": "https://www.youtube.com/watch?v=5YxHMHiMkdc",
+      "videoId": "5YxHMHiMkdc"
+    },
+    {
       "channel": "Bunny ABC Kids",
       "title": "Bunny & Bobo Play Hide and Seek! | Fun Hide and Seek Adventure for Kids | Learn Safe Places to Play",
       "published": "2026-11-20T09:09:40+00:00",
@@ -734,6 +851,13 @@
       "published": "2026-11-20T07:40:53+00:00",
       "url": "https://www.youtube.com/watch?v=WKyeGSFdAsk",
       "videoId": "WKyeGSFdAsk"
+    },
+    {
+      "channel": "ChuChu TV",
+      "title": "Dinosaur Learning Videos for Kids Vol. 2 | Jumblikans Songs for Toddlers | 23 Min | ChuChu TV",
+      "published": "2026-11-20T07:00:17+00:00",
+      "url": "https://www.youtube.com/watch?v=Wy1sTwWowno",
+      "videoId": "Wy1sTwWowno"
     },
     {
       "channel": "Bunny ABC Kids",
@@ -764,6 +888,13 @@
       "videoId": "m5w2xhsA988"
     },
     {
+      "channel": "Pinkfong – Baby Shark",
+      "title": "[✨NEW] Pinkfong Had A Farm | Hoi Poi Dance Time | Pinkfong Songs for Kids",
+      "published": "2026-11-19T23:00:37+00:00",
+      "url": "https://www.youtube.com/watch?v=AwPBlZ1dBHM",
+      "videoId": "AwPBlZ1dBHM"
+    },
+    {
       "channel": "ABC Luma",
       "title": "Magic Show ABC Song | Magician Capital Letters A to Z for Toddlers #abcsong #alphabetsong #learnabc",
       "published": "2026-11-19T22:30:37+00:00",
@@ -783,6 +914,13 @@
       "published": "2026-11-19T18:04:16+00:00",
       "url": "https://www.youtube.com/watch?v=SdfJne2gwPY",
       "videoId": "SdfJne2gwPY"
+    },
+    {
+      "channel": "Super Simple Songs",
+      "title": "We Are Elves | @NoodleAndPals make toys in Santa's workshop! | Christmas Song | Super Simple Songs",
+      "published": "2026-11-19T15:00:08+00:00",
+      "url": "https://www.youtube.com/watch?v=16LdAdVN0q0",
+      "videoId": "16LdAdVN0q0"
     },
     {
       "channel": "ABC Luma",
@@ -806,6 +944,13 @@
       "videoId": "DB25qfdz7cI"
     },
     {
+      "channel": "Little Baby Bum",
+      "title": "Brave Heroes! Fire Truck Adventure 🚒 #WorldChildrensDay | Little Baby Bum",
+      "published": "2026-11-19T13:00:03+00:00",
+      "url": "https://www.youtube.com/watch?v=2lOLO-LXw58",
+      "videoId": "2lOLO-LXw58"
+    },
+    {
       "channel": "Bunny ABC Kids",
       "title": "Never Follow Strangers! 🚫 | Bunny Teaches Bobo Stranger Safety Rules | Personal Safety for Kids",
       "published": "2026-11-19T12:58:58+00:00",
@@ -820,6 +965,13 @@
       "videoId": "CtTEYWARiOs"
     },
     {
+      "channel": "Pinkfong – Baby Shark",
+      "title": "Baby Shark: The Santa Contest 🎅 Coming to Cinemas December 4! 🎬 Check the Description for Details!",
+      "published": "2026-11-19T12:00:22+00:00",
+      "url": "https://www.youtube.com/watch?v=Olu1icPn2tk",
+      "videoId": "Olu1icPn2tk"
+    },
+    {
       "channel": "NVN KIDS TV",
       "title": "చీమ మరియు మిడత కథ 🐜🦗| కష్టపడితేనే విజయం!🦗Telugu Moral Stories #antandgrasshopper #motivation #shorts",
       "published": "2026-11-19T11:31:53+00:00",
@@ -827,11 +979,46 @@
       "videoId": "6CSuMiZU4Ro"
     },
     {
+      "channel": "Numberblocks",
+      "title": "Let's Learn the Times Tables! - Multiplication Made Easy | Learn to Count for Kids | Numberblocks",
+      "published": "2026-11-19T11:00:17+00:00",
+      "url": "https://www.youtube.com/watch?v=dPOUvBwPt2k",
+      "videoId": "dPOUvBwPt2k"
+    },
+    {
+      "channel": "BabyBus",
+      "title": "Beep Beep Police | Who Took the Cookies? | Learn Colors | Nursery Rhymes & Kids Songs | BabyBus",
+      "published": "2026-11-19T10:30:17+00:00",
+      "url": "https://www.youtube.com/watch?v=gTub2DSKanE",
+      "videoId": "gTub2DSKanE"
+    },
+    {
+      "channel": "Little Baby Bum",
+      "title": "Floating Alphabet Party Balloon Adventure! 🎈✨ #short #LBB #ABC",
+      "published": "2026-11-19T08:45:16+00:00",
+      "url": "https://www.youtube.com/watch?v=kF5lXmv0Xys",
+      "videoId": "kF5lXmv0Xys"
+    },
+    {
+      "channel": "Cocomelon – Nursery Rhymes",
+      "title": "Train Song | Grandma and Grandpa Save the Day | CoComelon Nursery Rhymes & Kids Songs",
+      "published": "2026-11-19T08:00:35+00:00",
+      "url": "https://www.youtube.com/watch?v=wuuvy_CZg7s",
+      "videoId": "wuuvy_CZg7s"
+    },
+    {
       "channel": "Pip the Kiwi",
       "title": "The Baby Zebra Who Lost Her Stripes 🦓 A Sweet Bedtime Story",
       "published": "2026-11-19T00:15:40+00:00",
       "url": "https://www.youtube.com/watch?v=LxHN9LxyWt0",
       "videoId": "LxHN9LxyWt0"
+    },
+    {
+      "channel": "Pinkfong – Baby Shark",
+      "title": "Bigger, Bigger, BIGGER Baby Shark?! 🦈 #pinkfong #babyshark",
+      "published": "2026-11-18T23:00:30+00:00",
+      "url": "https://www.youtube.com/watch?v=faHT1WIpsjE",
+      "videoId": "faHT1WIpsjE"
     },
     {
       "channel": "ABC Luma",
@@ -925,6 +1112,20 @@
       "videoId": "PvvVD8oH3y0"
     },
     {
+      "channel": "Cocomelon – Nursery Rhymes",
+      "title": "Festive CoComelon DIY Craft! 🎅 Dear Santa, I Wish It Was Christmas All Year Long! #Kids #Shorts",
+      "published": "2026-11-18T13:00:55+00:00",
+      "url": "https://www.youtube.com/watch?v=6yVcGIjiU4U",
+      "videoId": "6yVcGIjiU4U"
+    },
+    {
+      "channel": "Little Baby Bum",
+      "title": "Twinkle Twinkle Little Star Princess ✨ #WorldChildrensDay | Little Baby Bum",
+      "published": "2026-11-18T13:00:22+00:00",
+      "url": "https://www.youtube.com/watch?v=PFO-TZWxoIM",
+      "videoId": "PFO-TZWxoIM"
+    },
+    {
       "channel": "Kidz Toons",
       "title": "What Happens When the Bus Starts Rolling? 🚌✨ #shorts",
       "published": "2026-11-18T12:00:27+00:00",
@@ -944,6 +1145,20 @@
       "published": "2026-11-18T11:12:57+00:00",
       "url": "https://www.youtube.com/watch?v=74znwkBd0j8",
       "videoId": "74znwkBd0j8"
+    },
+    {
+      "channel": "Numberblocks",
+      "title": "The Numberblobs Song | Numberblocks #shorts",
+      "published": "2026-11-18T11:00:04+00:00",
+      "url": "https://www.youtube.com/watch?v=FtqQW6Gsris",
+      "videoId": "FtqQW6Gsris"
+    },
+    {
+      "channel": "BabyBus",
+      "title": "Kids Learn Healthy Habits | Healthy Power Meal | Funny Kids Story | Kids Cartoon | BabyBus",
+      "published": "2026-11-18T10:30:34+00:00",
+      "url": "https://www.youtube.com/watch?v=1UVoATi_WbA",
+      "videoId": "1UVoATi_WbA"
     },
     {
       "channel": "KidsMegaHub",
@@ -979,6 +1194,13 @@
       "published": "2026-11-18T00:15:34+00:00",
       "url": "https://www.youtube.com/watch?v=Y4qQnogt85g",
       "videoId": "Y4qQnogt85g"
+    },
+    {
+      "channel": "Pinkfong – Baby Shark",
+      "title": "Boo Boo! Baby Car Got Scared! | Easy Nursery Rhymes | Pinkfong Official",
+      "published": "2026-11-17T23:00:17+00:00",
+      "url": "https://www.youtube.com/watch?v=LmAcapo9in4",
+      "videoId": "LmAcapo9in4"
     },
     {
       "channel": "ABC Luma",
@@ -1037,6 +1259,13 @@
       "videoId": "B8v_TLWMd4A"
     },
     {
+      "channel": "Little Baby Bum",
+      "title": "We Are Friends Together on the Train 🤝 #WorldChildrensDay | Little Baby Bum",
+      "published": "2026-11-17T13:00:28+00:00",
+      "url": "https://www.youtube.com/watch?v=NPTDtIxy3_g",
+      "videoId": "NPTDtIxy3_g"
+    },
+    {
       "channel": "KidsMegaHub",
       "title": "Moo, Oink & Neigh! 17 Amazing Animal Sounds Every Kid Should Know!",
       "published": "2026-11-17T13:00:09+00:00",
@@ -1065,6 +1294,13 @@
       "videoId": "lzn_bMbo9cw"
     },
     {
+      "channel": "Numberblocks",
+      "title": "Mirror, Mirror | Numberblocks COURSE - Level 2, Orange (S3 E19)",
+      "published": "2026-11-17T11:00:13+00:00",
+      "url": "https://www.youtube.com/watch?v=m6B6zkUleW4",
+      "videoId": "m6B6zkUleW4"
+    },
+    {
       "channel": "NVN KIDS TV",
       "title": "చిన్న ఎలుక చేసిన పెద్ద సహాయం! 🐭🦁| సింహం మరియు ఎలుక కథ |Telugu Moral Stories #stories #telugu #shorts",
       "published": "2026-11-17T10:53:18+00:00",
@@ -1072,11 +1308,32 @@
       "videoId": "Wah2SmfvbxA"
     },
     {
+      "channel": "BabyBus",
+      "title": "The Missing Cable Car | Car Safety Rules | Kids Cartoon | Sheriff Labrador | BabyBus",
+      "published": "2026-11-17T10:30:24+00:00",
+      "url": "https://www.youtube.com/watch?v=CHMGz-r-tYo",
+      "videoId": "CHMGz-r-tYo"
+    },
+    {
       "channel": "Bubble Toon TV",
       "title": "Why I can't take nice photos 🐱🤳 #funny #fail #animation",
       "published": "2026-11-17T09:44:06+00:00",
       "url": "https://www.youtube.com/watch?v=BNvC9zjcb-g",
       "videoId": "BNvC9zjcb-g"
+    },
+    {
+      "channel": "Little Baby Bum",
+      "title": "Guess the Vehicle by Shape! 🚒💨 #Shorts #VehicleQuiz #KidsFun",
+      "published": "2026-11-17T08:45:29+00:00",
+      "url": "https://www.youtube.com/watch?v=oluzCwdakho",
+      "videoId": "oluzCwdakho"
+    },
+    {
+      "channel": "Cocomelon – Nursery Rhymes",
+      "title": "Cooking Dinner Song | Making a Mess with JJ | CoComelon Nursery Rhymes & Kids Songs",
+      "published": "2026-11-17T08:00:31+00:00",
+      "url": "https://www.youtube.com/watch?v=4YNfO31yRP8",
+      "videoId": "4YNfO31yRP8"
     },
     {
       "channel": "Pip the Kiwi",
@@ -1156,6 +1413,20 @@
       "videoId": "I-ZFJk64i9o"
     },
     {
+      "channel": "Little Baby Bum",
+      "title": "Big Dreams, Bright Wishes Song 🌟 #WorldChildrensDay | Little Baby Bum",
+      "published": "2026-11-16T13:00:39+00:00",
+      "url": "https://www.youtube.com/watch?v=1XTiL9bJhUA",
+      "videoId": "1XTiL9bJhUA"
+    },
+    {
+      "channel": "Cocomelon – Nursery Rhymes",
+      "title": "Let's Build a Snowman! ❄️☃️  Count the Blocks with JJ #cocomelon #kids #shorts",
+      "published": "2026-11-16T13:00:32+00:00",
+      "url": "https://www.youtube.com/watch?v=HNkS_0pydyQ",
+      "videoId": "HNkS_0pydyQ"
+    },
+    {
       "channel": "Kidz Toons",
       "title": "What Happens When You Scrub Away the Germs? 🧼 #shorts",
       "published": "2026-11-16T12:30:31+00:00",
@@ -1184,11 +1455,32 @@
       "videoId": "e63eHBfvnrU"
     },
     {
+      "channel": "Numberblocks",
+      "title": "Let's Discover Rectangles! | Numberblocks #shorts",
+      "published": "2026-11-16T11:00:05+00:00",
+      "url": "https://www.youtube.com/watch?v=juKQM0RM5Nw",
+      "videoId": "juKQM0RM5Nw"
+    },
+    {
+      "channel": "Little Baby Bum",
+      "title": "Sing the ABC Phonics Song! 🔤🎵 #short #LBB",
+      "published": "2026-11-16T08:45:23+00:00",
+      "url": "https://www.youtube.com/watch?v=PtJPY0VdgN4",
+      "videoId": "PtJPY0VdgN4"
+    },
+    {
       "channel": "Pip the Kiwi",
       "title": "Indie the Baby Ibis Gets Lost in the Marsh Mist | Bedtime Story",
       "published": "2026-11-16T00:15:44+00:00",
       "url": "https://www.youtube.com/watch?v=BfzpaVr0Yl8",
       "videoId": "BfzpaVr0Yl8"
+    },
+    {
+      "channel": "Pinkfong – Baby Shark",
+      "title": "Ehehehe #ninimo #pinkfong #booyah",
+      "published": "2026-11-15T23:00:35+00:00",
+      "url": "https://www.youtube.com/watch?v=YqCfoLxiTHc",
+      "videoId": "YqCfoLxiTHc"
     },
     {
       "channel": "Jad Learning World",
@@ -1226,6 +1518,20 @@
       "videoId": "CTnCIeIiDdw"
     },
     {
+      "channel": "Cocomelon – Nursery Rhymes",
+      "title": "Dinosaur Counting Game! 🦕🎲 Play Along with JJ & Cody #cocomelon #kids #shorts",
+      "published": "2026-11-15T13:00:26+00:00",
+      "url": "https://www.youtube.com/watch?v=STd5jOVTqh8",
+      "videoId": "STd5jOVTqh8"
+    },
+    {
+      "channel": "Little Baby Bum",
+      "title": "Kindness Around the World 💛 #WorldChildrensDay | Little Baby Bum",
+      "published": "2026-11-15T13:00:00+00:00",
+      "url": "https://www.youtube.com/watch?v=MHytkunLX0E",
+      "videoId": "MHytkunLX0E"
+    },
+    {
       "channel": "Pinky Corner",
       "title": "ABC Alphabet Song | Uppercase and Lowercase Letters | Preschool Learning with muisc and animations",
       "published": "2026-11-15T12:13:25+00:00",
@@ -1245,6 +1551,34 @@
       "published": "2026-11-15T11:44:12+00:00",
       "url": "https://www.youtube.com/watch?v=cI00GIe_vIU",
       "videoId": "cI00GIe_vIU"
+    },
+    {
+      "channel": "Numberblocks",
+      "title": "Rainbow Maths for Gloomy Days | Learn to Count for Kids Compilation | Number Cartoon | Numberblocks",
+      "published": "2026-11-15T11:00:28+00:00",
+      "url": "https://www.youtube.com/watch?v=063xXBMTsXM",
+      "videoId": "063xXBMTsXM"
+    },
+    {
+      "channel": "BabyBus",
+      "title": "Brush Your Teeth Song | Johny Johny Yes Papa | Good Habits | Nursery Rhymes | BabyBus",
+      "published": "2026-11-15T10:30:01+00:00",
+      "url": "https://www.youtube.com/watch?v=9KFplkhK3AM",
+      "videoId": "9KFplkhK3AM"
+    },
+    {
+      "channel": "Little Baby Bum",
+      "title": "Johny Johny Yes Papa (2-Episode Mashup!) #shorts #LBB #nurseryrhymes",
+      "published": "2026-11-15T08:45:01+00:00",
+      "url": "https://www.youtube.com/watch?v=cBaPbdjMGk8",
+      "videoId": "cBaPbdjMGk8"
+    },
+    {
+      "channel": "Numberblocks",
+      "title": "🟥 How BIG is One Million? From 1 to 1,000,000 | Learn to Count for Kids | Numberblocks",
+      "published": "2026-11-15T07:30:36+00:00",
+      "url": "https://www.youtube.com/watch?v=9dld8jJyQ60",
+      "videoId": "9dld8jJyQ60"
     },
     {
       "channel": "KidsMegaHub",
@@ -1275,6 +1609,13 @@
       "videoId": "7nNUhekb7hs"
     },
     {
+      "channel": "Pinkfong – Baby Shark",
+      "title": "🐱 My Orange Cat Ninimo | Happy Cat Songs | Pinkfong Official",
+      "published": "2026-11-14T23:00:16+00:00",
+      "url": "https://www.youtube.com/watch?v=BigjjP2FLSk",
+      "videoId": "BigjjP2FLSk"
+    },
+    {
       "channel": "Jad Learning World",
       "title": "أغنية فلفول للأطفال 🦔 | تعلّم المساحة الشخصية | الصداقة والاحترام",
       "published": "2026-11-14T19:30:22+00:00",
@@ -1289,11 +1630,25 @@
       "videoId": "V3pgQPHS_7I"
     },
     {
+      "channel": "Little Baby Bum",
+      "title": "Hello My Friends! 🌍 #WorldChildrensDay | Little Baby Bum",
+      "published": "2026-11-14T13:00:31+00:00",
+      "url": "https://www.youtube.com/watch?v=ulSyE_ANBJQ",
+      "videoId": "ulSyE_ANBJQ"
+    },
+    {
       "channel": "Kidz Toons",
       "title": "What Happens When You Put on the Wrong Shoes? 👟😂 #shorts",
       "published": "2026-11-14T12:00:29+00:00",
       "url": "https://www.youtube.com/watch?v=Kd511B1VCto",
       "videoId": "Kd511B1VCto"
+    },
+    {
+      "channel": "Pinkfong – Baby Shark",
+      "title": "All Your Favorite Baby Shark Videos and Games, All in One Place!ㅣBaby Shark World for Kids App",
+      "published": "2026-11-14T12:00:12+00:00",
+      "url": "https://www.youtube.com/watch?v=9CsRKWkcSmc",
+      "videoId": "9CsRKWkcSmc"
     },
     {
       "channel": "NVN KIDS TV",
@@ -1310,11 +1665,25 @@
       "videoId": "HiTWWUF5AQA"
     },
     {
+      "channel": "Numberblocks",
+      "title": "'I'll Vote for That' - Real Life Maths | Learn to Count for Kids | Number Cartoon | Numberblocks",
+      "published": "2026-11-14T11:00:04+00:00",
+      "url": "https://www.youtube.com/watch?v=oZ-zn7QVTQQ",
+      "videoId": "oZ-zn7QVTQQ"
+    },
+    {
       "channel": "Pinky Corner",
       "title": "ABC Song for Kids | Meet Catchy Alphabet Characters A–Z | Learn the ABCs with Fun Music",
       "published": "2026-11-14T08:58:05+00:00",
       "url": "https://www.youtube.com/watch?v=d72Uel8mGEA",
       "videoId": "d72Uel8mGEA"
+    },
+    {
+      "channel": "Cocomelon – Nursery Rhymes",
+      "title": "Snowy Holiday Ski Race ! JJ VS CODY | CoComelon Nursery Rhymes & Kids Songs",
+      "published": "2026-11-14T08:00:38+00:00",
+      "url": "https://www.youtube.com/watch?v=XOWwmMLMjaQ",
+      "videoId": "XOWwmMLMjaQ"
     },
     {
       "channel": "MoodNMotion",
@@ -1366,6 +1735,13 @@
       "videoId": "QptyrXffhyE"
     },
     {
+      "channel": "Cocomelon – Nursery Rhymes",
+      "title": "Can You Find & Count the Arctic Animals with? 🐻‍❄️❄️  #cocomelon #shorts",
+      "published": "2026-11-13T13:00:11+00:00",
+      "url": "https://www.youtube.com/watch?v=TLxgNITGxoo",
+      "videoId": "TLxgNITGxoo"
+    },
+    {
       "channel": "Chloe and Koko TV",
       "title": "Sky & Seasons Songs 🌈❄️ Learn Weather & the Four Seasons | Chloe & Koko",
       "published": "2026-11-13T12:00:31+00:00",
@@ -1387,6 +1763,27 @@
       "videoId": "mPvHDHSWWEg"
     },
     {
+      "channel": "Numberblocks",
+      "title": "Space Adventures with Numberblock One | Learn to Count for Kids | Number Cartoon | Numberblocks",
+      "published": "2026-11-13T11:00:34+00:00",
+      "url": "https://www.youtube.com/watch?v=hw7DpKZdDBg",
+      "videoId": "hw7DpKZdDBg"
+    },
+    {
+      "channel": "BabyBus",
+      "title": "Let's Share the Pumpkin Pie | The Farmer in the Dell | Nursery Rhymes & Kids Songs | BabyBus",
+      "published": "2026-11-13T10:30:13+00:00",
+      "url": "https://www.youtube.com/watch?v=FngWTuefyw0",
+      "videoId": "FngWTuefyw0"
+    },
+    {
+      "channel": "ChuChu TV",
+      "title": "Curiosity Corner | Stories About Learning & Discovery for Kids | 24 Min | ChuChu TV",
+      "published": "2026-11-13T07:00:24+00:00",
+      "url": "https://www.youtube.com/watch?v=9-znbwPcWpQ",
+      "videoId": "9-znbwPcWpQ"
+    },
+    {
       "channel": "The Smile Brothers",
       "title": "Shapes Learning Song | Kids Song Square & Circle | Shapes - Colors",
       "published": "2026-11-13T04:39:48+00:00",
@@ -1399,6 +1796,13 @@
       "published": "2026-11-13T00:17:25+00:00",
       "url": "https://www.youtube.com/watch?v=m3bEhOnF91I",
       "videoId": "m3bEhOnF91I"
+    },
+    {
+      "channel": "Pinkfong – Baby Shark",
+      "title": "[🚓NEW] The Super Rescue Team is Hurt | Hoi Poi Pinkfong Car Mechanic | Pinkfong Official",
+      "published": "2026-11-12T23:00:06+00:00",
+      "url": "https://www.youtube.com/watch?v=wsw3t0bKmgs",
+      "videoId": "wsw3t0bKmgs"
     },
     {
       "channel": "Pinky Corner",
@@ -1420,6 +1824,13 @@
       "published": "2026-11-12T13:13:45+00:00",
       "url": "https://www.youtube.com/watch?v=s0TCc79CZZs",
       "videoId": "s0TCc79CZZs"
+    },
+    {
+      "channel": "Little Baby Bum",
+      "title": "Little Baby Bum Friends Learn to Play & Run on Sports Day! 🏆",
+      "published": "2026-11-12T13:00:24+00:00",
+      "url": "https://www.youtube.com/watch?v=MU2UNK8zWnQ",
+      "videoId": "MU2UNK8zWnQ"
     },
     {
       "channel": "The Smile Brothers",
@@ -1450,11 +1861,53 @@
       "videoId": "7x2A_hfbcls"
     },
     {
+      "channel": "Numberblocks",
+      "title": "Super Duper Counting Games with the Numberblocks | Learn to Count for Kids | Numberblocks",
+      "published": "2026-11-12T11:00:35+00:00",
+      "url": "https://www.youtube.com/watch?v=i8HP2Btj7kk",
+      "videoId": "i8HP2Btj7kk"
+    },
+    {
+      "channel": "BabyBus",
+      "title": "Johny Johny Yes Papa | Boo Boo Song | Good Habits | Nursery Rhyme & Kids Songs | BabyBus",
+      "published": "2026-11-12T10:30:09+00:00",
+      "url": "https://www.youtube.com/watch?v=_CGcCy7V34w",
+      "videoId": "_CGcCy7V34w"
+    },
+    {
+      "channel": "Little Baby Bum",
+      "title": "Floating Alphabet Balloons🎈☁️ #short #LBB #ABC",
+      "published": "2026-11-12T08:45:03+00:00",
+      "url": "https://www.youtube.com/watch?v=dUhUEdF9Lq4",
+      "videoId": "dUhUEdF9Lq4"
+    },
+    {
+      "channel": "Cocomelon – Nursery Rhymes",
+      "title": "Tale of 3 Friends | World Children Day Special | CoComelon Nursery Rhymes & Kids Songs",
+      "published": "2026-11-12T08:00:22+00:00",
+      "url": "https://www.youtube.com/watch?v=errlt2XtceI",
+      "videoId": "errlt2XtceI"
+    },
+    {
       "channel": "KidsMegaHub",
       "title": "10 AMAZING ANIMALS & THEIR INCREDIBLE SOUNDS! 🦁🐘 | Animal Sounds for Kids | KidsMegaHub #shorts",
       "published": "2026-11-12T07:00:38+00:00",
       "url": "https://www.youtube.com/watch?v=s7zaqp66524",
       "videoId": "s7zaqp66524"
+    },
+    {
+      "channel": "Pinkfong – Baby Shark",
+      "title": "🎅🔴 LIVE! 24 Hours of Best of Winter Baby Shark Dance | 2026 Christmas Special | @Pinkfong LIVE",
+      "published": "2026-11-12T04:24:26+00:00",
+      "url": "https://www.youtube.com/watch?v=fyWzfNqro7U",
+      "videoId": "fyWzfNqro7U"
+    },
+    {
+      "channel": "Pinkfong – Baby Shark",
+      "title": "🎁🔴 LIVE! Baby Shark’s 12 Days of Christmas & More | 24 Hours of Holiday Nursery Rhyme",
+      "published": "2026-11-12T04:17:19+00:00",
+      "url": "https://www.youtube.com/watch?v=2BnElG1NaN0",
+      "videoId": "2BnElG1NaN0"
     },
     {
       "channel": "Pip the Kiwi",
@@ -1471,11 +1924,25 @@
       "videoId": "OWHwTxGB78o"
     },
     {
+      "channel": "Pinkfong – Baby Shark",
+      "title": "Make the Right Sound or Get a Funny Doodle 😛🖍️ #mukbang #asmr",
+      "published": "2026-11-11T23:00:26+00:00",
+      "url": "https://www.youtube.com/watch?v=dFQDZMPPH-k",
+      "videoId": "dFQDZMPPH-k"
+    },
+    {
       "channel": "MoodNMotion",
       "title": "JCB Friends Ep 8: Wrecking Ball Crane, Demolition Excavator & Jaw Crusher | Construction Vehicles",
       "published": "2026-11-11T13:30:11+00:00",
       "url": "https://www.youtube.com/watch?v=Q9qnn6UzXzg",
       "videoId": "Q9qnn6UzXzg"
+    },
+    {
+      "channel": "Cocomelon – Nursery Rhymes",
+      "title": "You Can Do It! 🛝🎉 Fun Slide Toy Play with JJ and Cody!  #cocomelon #kids #shorts",
+      "published": "2026-11-11T13:00:26+00:00",
+      "url": "https://www.youtube.com/watch?v=m0BXS3w1CW0",
+      "videoId": "m0BXS3w1CW0"
     },
     {
       "channel": "ZOOZIVA TV",
@@ -1492,11 +1959,32 @@
       "videoId": "ZWhD04GQmLQ"
     },
     {
+      "channel": "Numberblocks",
+      "title": "Who Will Win the Race? | Numberblocks #shorts",
+      "published": "2026-11-11T11:00:34+00:00",
+      "url": "https://www.youtube.com/watch?v=00BakJ1QGis",
+      "videoId": "00BakJ1QGis"
+    },
+    {
+      "channel": "BabyBus",
+      "title": "Wheels on the  Race Car Song | Learn Shapes | Nursery Rhymes & Kids Songs | BabyBus",
+      "published": "2026-11-11T10:30:37+00:00",
+      "url": "https://www.youtube.com/watch?v=6MpIeFYM6HI",
+      "videoId": "6MpIeFYM6HI"
+    },
+    {
       "channel": "Pip the Kiwi",
       "title": "The Wee Wombat Who Wouldn't Share the Moon Blanket 🌙",
       "published": "2026-11-11T00:17:29+00:00",
       "url": "https://www.youtube.com/watch?v=aQgG8tl4Pxc",
       "videoId": "aQgG8tl4Pxc"
+    },
+    {
+      "channel": "Pinkfong – Baby Shark",
+      "title": "Five Little Monkeys Jumping on the Bed Compilation | Nursery Rhymes for Kids | Pinkfong Official",
+      "published": "2026-11-10T23:00:13+00:00",
+      "url": "https://www.youtube.com/watch?v=Dz_TZetuB0E",
+      "videoId": "Dz_TZetuB0E"
     },
     {
       "channel": "The Smile Brothers",
@@ -1527,6 +2015,13 @@
       "videoId": "pQ9Yo2n9hoE"
     },
     {
+      "channel": "Numberblocks",
+      "title": "The Legend of Big Tum | Numberblocks COURSE - Level 2, Orange (S3 E18)",
+      "published": "2026-11-10T11:00:32+00:00",
+      "url": "https://www.youtube.com/watch?v=tXGPi3v32KU",
+      "videoId": "tXGPi3v32KU"
+    },
+    {
       "channel": "Pinky Corner",
       "title": "Four Alphabet Character Worlds | Catchy ABC Song for Kids | Learn A–Z | Pinky Corner",
       "published": "2026-11-10T10:42:20+00:00",
@@ -1534,11 +2029,32 @@
       "videoId": "SSfpCilHBz0"
     },
     {
+      "channel": "BabyBus",
+      "title": "Snap Safe | Safety Rules | Police Rescue | Kids Cartoon | Sheriff Labrador | BabyBus",
+      "published": "2026-11-10T10:30:36+00:00",
+      "url": "https://www.youtube.com/watch?v=5VlXts_vv_A",
+      "videoId": "5VlXts_vv_A"
+    },
+    {
+      "channel": "Cocomelon – Nursery Rhymes",
+      "title": "JJ and Family Indoor Playground Peekaboo Adventure 🛝🎉 |  CoComelon Nursery Rhymes & Kids Songs",
+      "published": "2026-11-10T08:00:03+00:00",
+      "url": "https://www.youtube.com/watch?v=jKxIHF74HF4",
+      "videoId": "jKxIHF74HF4"
+    },
+    {
       "channel": "Lily's World",
       "title": "Stop That Loud Tummy Monster! 🍪🦖#shorts  #kidsshorts",
       "published": "2026-11-09T18:27:05+00:00",
       "url": "https://www.youtube.com/watch?v=XdA6x2LptOA",
       "videoId": "XdA6x2LptOA"
+    },
+    {
+      "channel": "Cocomelon – Nursery Rhymes",
+      "title": "CoComelon: The Movie | Official New Trailer",
+      "published": "2026-11-09T16:00:33+00:00",
+      "url": "https://www.youtube.com/watch?v=JciwN7x6mB8",
+      "videoId": "JciwN7x6mB8"
     },
     {
       "channel": "MoodNMotion",
@@ -1562,11 +2078,25 @@
       "videoId": "NBVteK8NfH8"
     },
     {
+      "channel": "Pinkfong – Baby Shark",
+      "title": "Swim Up, Up, Up with Baby Shark! 🦈 #bathtime #bathtub",
+      "published": "2026-11-08T23:00:00+00:00",
+      "url": "https://www.youtube.com/watch?v=zXKmJpfQczE",
+      "videoId": "zXKmJpfQczE"
+    },
+    {
       "channel": "Chloe and Koko TV",
       "title": "Koko Catches a Snowflake! ❄️ | Chloe & Koko #shorts",
       "published": "2026-11-08T12:00:40+00:00",
       "url": "https://www.youtube.com/watch?v=-Gcgax_JxFk",
       "videoId": "-Gcgax_JxFk"
+    },
+    {
+      "channel": "BabyBus",
+      "title": "My Nose Is Growing | Don't Lie, Baby | Good Habits | Nursery Rhymes & Kids Songs | BabyBus",
+      "published": "2026-11-08T10:30:25+00:00",
+      "url": "https://www.youtube.com/watch?v=gTxKS03fwk0",
+      "videoId": "gTxKS03fwk0"
     },
     {
       "channel": "Jad Learning World",
@@ -1588,6 +2118,13 @@
       "published": "2026-11-07T11:53:18+00:00",
       "url": "https://www.youtube.com/watch?v=_u9KrCe-Alk",
       "videoId": "_u9KrCe-Alk"
+    },
+    {
+      "channel": "ChuChu TV",
+      "title": "The Story of Diwali for Kids 🪔  #chuchutv #Shorts #kidsvideo #kidsstory #kidsstories #storytime",
+      "published": "2026-11-07T08:36:57+00:00",
+      "url": "https://www.youtube.com/watch?v=gTBHLpj5RN8",
+      "videoId": "gTBHLpj5RN8"
     },
     {
       "channel": "MoodNMotion",
@@ -1632,11 +2169,25 @@
       "videoId": "n6lWeaRMc0E"
     },
     {
+      "channel": "BabyBus",
+      "title": "My Zipper's Stuck! | This is the Way | Good Habits | Nursery Rhymes & Kids Songs | BabyBus",
+      "published": "2026-11-06T10:30:23+00:00",
+      "url": "https://www.youtube.com/watch?v=8gAxjz-fHgM",
+      "videoId": "8gAxjz-fHgM"
+    },
+    {
       "channel": "KidsMegaHub",
       "title": "Most Popular Wild Bird Sounds | Can You Guess All 5? | Part 3 #shorts",
       "published": "2026-11-06T07:00:10+00:00",
       "url": "https://www.youtube.com/watch?v=lUGSil_mJxE",
       "videoId": "lUGSil_mJxE"
+    },
+    {
+      "channel": "ChuChu TV",
+      "title": "Learn Colors with Surprise Eggs | Color Song for Kids — Orange, Green & Red | 29 Min | ChuChu TV",
+      "published": "2026-11-06T07:00:06+00:00",
+      "url": "https://www.youtube.com/watch?v=hp9lK6TT26c",
+      "videoId": "hp9lK6TT26c"
     },
     {
       "channel": "Pinky Corner",
@@ -1653,6 +2204,13 @@
       "videoId": "S7XtKxh2yoA"
     },
     {
+      "channel": "Super Simple Songs",
+      "title": "Scrubbity Rubbity Doo 🧼 | Wash Your Hands & Face | Fun Kids Hygiene Song | Super Simple Songs",
+      "published": "2026-11-05T15:00:10+00:00",
+      "url": "https://www.youtube.com/watch?v=PIWYVP6hBEM",
+      "videoId": "PIWYVP6hBEM"
+    },
+    {
       "channel": "Pinky Corner",
       "title": "ABC Song for Kids | Learn the Alphabet with Fun Music and Animation",
       "published": "2026-11-05T14:54:44+00:00",
@@ -1665,6 +2223,13 @@
       "published": "2026-11-05T12:00:28+00:00",
       "url": "https://www.youtube.com/watch?v=l9y-tO-8v8U",
       "videoId": "l9y-tO-8v8U"
+    },
+    {
+      "channel": "BabyBus",
+      "title": "I Want It! | Sharing is Caring | Good Habit | Funny Kids Story | Kids Cartoon | BabyBus",
+      "published": "2026-11-05T10:30:17+00:00",
+      "url": "https://www.youtube.com/watch?v=8V65B5j1xNM",
+      "videoId": "8V65B5j1xNM"
     },
     {
       "channel": "Jad Learning World",
@@ -1793,11 +2358,25 @@
       "videoId": "ml4l-eWEGBg"
     },
     {
+      "channel": "Ms Rachel – Toddler Learning Videos",
+      "title": "Best Baby Songs with Ms Rachel - Nursery Rhymes for Babies - Open Shut Them + More",
+      "published": "2026-10-30T14:22:48+00:00",
+      "url": "https://www.youtube.com/watch?v=XN6OiXLO1to",
+      "videoId": "XN6OiXLO1to"
+    },
+    {
       "channel": "Chloe and Koko TV",
       "title": "The Weather Song ☀️🌈 Learn Weather Words & Counting | Chloe & Koko",
       "published": "2026-10-30T12:00:12+00:00",
       "url": "https://www.youtube.com/watch?v=NrobJL1u-tk",
       "videoId": "NrobJL1u-tk"
+    },
+    {
+      "channel": "ChuChu TV",
+      "title": "Celebrate & Shine | Diwali + Christmas Stories for Kids | Festival Stories | 24 Min | ChuChu TV",
+      "published": "2026-10-30T07:00:24+00:00",
+      "url": "https://www.youtube.com/watch?v=QN_rSyChH5g",
+      "videoId": "QN_rSyChH5g"
     },
     {
       "channel": "Jad Learning World",
@@ -1849,6 +2428,13 @@
       "videoId": "CK88g1SfxmI"
     },
     {
+      "channel": "ChuChu TV",
+      "title": "Be Kind to Animals 🐿️🌳 Good Manners for Kids | #ChuChuTV #shorts #kidsvideo #kidsstory #kidsvideos",
+      "published": "2026-10-28T05:19:23+00:00",
+      "url": "https://www.youtube.com/watch?v=-1Q0EzsXabk",
+      "videoId": "-1Q0EzsXabk"
+    },
+    {
       "channel": "Chloe and Koko TV",
       "title": "Silly Koko! Teeth, Not TAILS! 🐒🪥 | Chloe & Koko #shorts",
       "published": "2026-10-27T12:00:19+00:00",
@@ -1884,6 +2470,13 @@
       "videoId": "3rxwOCGwzDk"
     },
     {
+      "channel": "ChuChu TV",
+      "title": "Nature Words for Toddlers #shorts  #bedtimestories #chuchutv #storytime #readalong #sel #kidsstories",
+      "published": "2026-10-24T03:49:25+00:00",
+      "url": "https://www.youtube.com/watch?v=ELOtprFQqB8",
+      "videoId": "ELOtprFQqB8"
+    },
+    {
       "channel": "Chloe and Koko TV",
       "title": "The Brush Your Teeth Song 🪥 Sparkly Smiles & Counting | Chloe & Koko",
       "published": "2026-10-23T12:00:34+00:00",
@@ -1891,11 +2484,32 @@
       "videoId": "zF08_iN44c4"
     },
     {
+      "channel": "ChuChu TV",
+      "title": "Animal Sounds for Toddlers 🐮🐑🐔🐴 | Farm Animals Surprise Eggs | ChuChu TV #shorts #farmanimals",
+      "published": "2026-10-23T09:17:52+00:00",
+      "url": "https://www.youtube.com/watch?v=Rp-yk33lsFU",
+      "videoId": "Rp-yk33lsFU"
+    },
+    {
+      "channel": "ChuChu TV",
+      "title": "Diwali Story of Narakasura + Festival of Lights Songs for Kids | 34 Min | ChuChu TV",
+      "published": "2026-10-23T07:00:33+00:00",
+      "url": "https://www.youtube.com/watch?v=8wtSECbyN74",
+      "videoId": "8wtSECbyN74"
+    },
+    {
       "channel": "Kiddies Kito World",
       "title": "🚨 Emergency Vehicles for Kids with Kito! 🚒🚑 | Police Cars, Fire Trucks & Ambulances | Learn Vehicles",
       "published": "2026-10-21T14:00:05+00:00",
       "url": "https://www.youtube.com/watch?v=Es2lWzzGsQs",
       "videoId": "Es2lWzzGsQs"
+    },
+    {
+      "channel": "ChuChu TV",
+      "title": "Hello, Ducklings! 🦆 | Read-Along Story for Toddlers | Copy-the-Duck Play | ChuChu TV",
+      "published": "2026-10-21T13:30:09+00:00",
+      "url": "https://www.youtube.com/watch?v=EPVBh_Jodrg",
+      "videoId": "EPVBh_Jodrg"
     },
     {
       "channel": "Jad Learning World",
@@ -1940,6 +2554,34 @@
       "videoId": "u2cs8ufMsmU"
     },
     {
+      "channel": "ChuChu TV",
+      "title": "Ding-Dong, It's Nine! 🌙 ChuChu's Bedtime Goodnight | ChuChu TV #Shorts #ChuChuTV #bedtimeroutine",
+      "published": "2026-10-16T14:30:28+00:00",
+      "url": "https://www.youtube.com/watch?v=do4cKWbNU6k",
+      "videoId": "do4cKWbNU6k"
+    },
+    {
+      "channel": "ChuChu TV",
+      "title": "Halloween Songs for Kids + Bestie & Taku Halloween Fun | 20 Min Compilation | ChuChu TV",
+      "published": "2026-10-16T07:00:37+00:00",
+      "url": "https://www.youtube.com/watch?v=quQM4ZPTLyA",
+      "videoId": "quQM4ZPTLyA"
+    },
+    {
+      "channel": "Super Simple Songs",
+      "title": "Top 20 Halloween Songs 🎃 🍬| Kids Songs | Super Simple Songs",
+      "published": "2026-10-15T14:00:16+00:00",
+      "url": "https://www.youtube.com/watch?v=KKNHyhl6aXU",
+      "videoId": "KKNHyhl6aXU"
+    },
+    {
+      "channel": "ChuChu TV",
+      "title": "Why We Wash Our Hands With Soap! 🧼 Healthy Habits for Kids | ChuChu TV #shorts #globalhandwashingday",
+      "published": "2026-10-15T02:30:26+00:00",
+      "url": "https://www.youtube.com/watch?v=P4bHAs89nOE",
+      "videoId": "P4bHAs89nOE"
+    },
+    {
       "channel": "KidsMegaHub",
       "title": "Guess the Animal by Its Silhouette! | 18 Wild Animals for Kids | Lion, Tiger, Elephant & More",
       "published": "2026-10-14T13:00:31+00:00",
@@ -1954,11 +2596,32 @@
       "videoId": "AqT2BV-MFyI"
     },
     {
+      "channel": "ChuChu TV",
+      "title": "Spooky Prank! 👻 Baby Taku & Bestie #Halloween Fun #shorts #chuchutv #halloween2026  #spookyseason",
+      "published": "2026-10-13T13:17:45+00:00",
+      "url": "https://www.youtube.com/watch?v=8xjdHXZtCUk",
+      "videoId": "8xjdHXZtCUk"
+    },
+    {
       "channel": "Kiddies Kito World",
       "title": "Kito's Farm Animal Adventure",
       "published": "2026-10-11T09:00:07+00:00",
       "url": "https://www.youtube.com/watch?v=kWZicUqvApg",
       "videoId": "kWZicUqvApg"
+    },
+    {
+      "channel": "ChuChu TV",
+      "title": "Rain Rain Go Away + Beach Song, Halloween Rain & More | 22 Min for Kids | ChuChu TV",
+      "published": "2026-10-10T07:00:00+00:00",
+      "url": "https://www.youtube.com/watch?v=okd7Kh4x9Tw",
+      "videoId": "okd7Kh4x9Tw"
+    },
+    {
+      "channel": "Super Simple Songs",
+      "title": "Halloween Night | 🍕 Dress Up As Food You Like for Halloween Night! | Super Simple Songs",
+      "published": "2026-10-08T14:00:23+00:00",
+      "url": "https://www.youtube.com/watch?v=Ne-ZcF58px4",
+      "videoId": "Ne-ZcF58px4"
     },
     {
       "channel": "Kiddies Kito World",
@@ -1982,6 +2645,13 @@
       "videoId": "7Xe_7t9h0BU"
     },
     {
+      "channel": "Super Simple Songs",
+      "title": "When We Play Hockey 🏒 | Super Simple Songs & ‪@NHL Hockey Song for Kids",
+      "published": "2026-09-24T14:00:32+00:00",
+      "url": "https://www.youtube.com/watch?v=LuJe0ad1Ygk",
+      "videoId": "LuJe0ad1Ygk"
+    },
+    {
       "channel": "Kiddies Kito World",
       "title": "Learn with Kito & Friends - Toddler Learning Videos - Kids Songs & Educational Adventures",
       "published": "2026-09-23T07:51:27+00:00",
@@ -1996,6 +2666,20 @@
       "videoId": "pWl4GwulBdM"
     },
     {
+      "channel": "Super Simple Songs",
+      "title": "Top 20 Anniversary Hit Songs 🎶 | \"20 Years of Super Simple\" now on Vinyl!",
+      "published": "2026-09-17T14:00:36+00:00",
+      "url": "https://www.youtube.com/watch?v=GzIObE7uR8Q",
+      "videoId": "GzIObE7uR8Q"
+    },
+    {
+      "channel": "Ms Rachel – Toddler Learning Videos",
+      "title": "🔴 Learn with Ms Rachel - Toddler Learning - Kids Songs & Nursery Rhymes - Wheels On The Bus",
+      "published": "2026-09-16T21:12:49+00:00",
+      "url": "https://www.youtube.com/watch?v=jBvzOfT8_44",
+      "videoId": "jBvzOfT8_44"
+    },
+    {
       "channel": "Kiddies Kito World",
       "title": "Kito and Friends Ride the Number Train 🚂. KITO LEARNS NUMBERS",
       "published": "2026-09-16T11:31:11+00:00",
@@ -2003,11 +2687,158 @@
       "videoId": "pf6KxUB4PYA"
     },
     {
+      "channel": "Super Simple Songs",
+      "title": "Our Listening Ears 👂 | Animal Sounds & Guessing Game for Kids! | Super Simple Songs",
+      "published": "2026-09-10T14:00:00+00:00",
+      "url": "https://www.youtube.com/watch?v=uBweptmCYZg",
+      "videoId": "uBweptmCYZg"
+    },
+    {
       "channel": "Kiddies Kito World",
       "title": "SNUGGLE UP AND COUNT THE SLEEPY  STARS WITH  KITO!",
       "published": "2026-09-09T10:59:18+00:00",
       "url": "https://www.youtube.com/watch?v=fQYSP9WvttY",
       "videoId": "fQYSP9WvttY"
+    },
+    {
+      "channel": "Super Simple Songs",
+      "title": "Happy Super Simple Day! #supersimple20thanniversary #supersimplesongs",
+      "published": "2026-09-08T13:15:31+00:00",
+      "url": "https://www.youtube.com/watch?v=iB2JoKjhOGE",
+      "videoId": "iB2JoKjhOGE"
+    },
+    {
+      "channel": "Super Simple Songs",
+      "title": "Top 20 Circle Time Songs ⭕️ | Kids Classroom Favorites | Super Simple's 20th Anniversary!",
+      "published": "2026-09-03T14:00:19+00:00",
+      "url": "https://www.youtube.com/watch?v=2QtoaV22rpY",
+      "videoId": "2QtoaV22rpY"
+    },
+    {
+      "channel": "Super Simple Songs",
+      "title": "🎉 Everybody Celebrate 🎉 | Best Celebration Song for Kids | 20 Years of Super Simple Songs!",
+      "published": "2026-08-27T14:00:24+00:00",
+      "url": "https://www.youtube.com/watch?v=iHP8FGwzjJg",
+      "videoId": "iHP8FGwzjJg"
+    },
+    {
+      "channel": "Ms Rachel – Toddler Learning Videos",
+      "title": "Learn Colors with Ms Rachel - I Love A Rainbow Song - NEW ALBUM VERSION - Toddler Learning",
+      "published": "2026-08-27T11:00:06+00:00",
+      "url": "https://www.youtube.com/watch?v=P-QLrDbOl1E",
+      "videoId": "P-QLrDbOl1E"
+    },
+    {
+      "channel": "Super Simple Songs",
+      "title": "Top 20 Back To School Songs | 🍎 📚 Learn and Sing ABCs + More! | Super Simple’s 20th Anniversary!",
+      "published": "2026-08-20T14:00:14+00:00",
+      "url": "https://www.youtube.com/watch?v=LLgTFZP3IQQ",
+      "videoId": "LLgTFZP3IQQ"
+    },
+    {
+      "channel": "Super Simple Songs",
+      "title": "Put on Your Shoes | Featuring Tobee and the Super Simple Puppets! | Super Simple Songs",
+      "published": "2026-08-13T14:00:02+00:00",
+      "url": "https://www.youtube.com/watch?v=YaFSwBg1qvg",
+      "videoId": "YaFSwBg1qvg"
+    },
+    {
+      "channel": "Super Simple Songs",
+      "title": "Top 20 Counting Songs | Numbers Practice for Preschool + Up | 20th Anniversary of Super Simple Songs",
+      "published": "2026-08-06T14:00:26+00:00",
+      "url": "https://www.youtube.com/watch?v=BG8HLIvuK24",
+      "videoId": "BG8HLIvuK24"
+    },
+    {
+      "channel": "Super Simple Songs",
+      "title": "Counting Up To 20 | Sea Animals Kids Math Song with @NoodleAndPals | Super Simple Songs",
+      "published": "2026-07-30T14:00:21+00:00",
+      "url": "https://www.youtube.com/watch?v=-HOQGg7uuQQ",
+      "videoId": "-HOQGg7uuQQ"
+    },
+    {
+      "channel": "Ms Rachel – Toddler Learning Videos",
+      "title": "Caterpillar Song - Kids Songs and Nursery Rhymes - Songs for Toddlers - Ms Rachel Songs on YouTube",
+      "published": "2026-07-29T15:00:38+00:00",
+      "url": "https://www.youtube.com/watch?v=yQyEmZIw1e8",
+      "videoId": "yQyEmZIw1e8"
+    },
+    {
+      "channel": "Ms Rachel – Toddler Learning Videos",
+      "title": "Learn to Talk for Babies and Toddlers - Ms Rachel visits the Play Street Museum in Manhattan!",
+      "published": "2026-07-22T13:00:06+00:00",
+      "url": "https://www.youtube.com/watch?v=w264Mn-2MnQ",
+      "videoId": "w264Mn-2MnQ"
+    },
+    {
+      "channel": "Ms Rachel – Toddler Learning Videos",
+      "title": "Animal Learning for Toddlers with Ms Rachel - 3 Full Episodes - Learn Animal Sounds - Best Videos",
+      "published": "2026-05-06T18:30:06+00:00",
+      "url": "https://www.youtube.com/watch?v=8KtnrtHRiCg",
+      "videoId": "8KtnrtHRiCg"
+    },
+    {
+      "channel": "Ms Rachel – Toddler Learning Videos",
+      "title": "Phonics Song + More Kids Songs & Nursery Rhymes - Learn Letter Sounds - Videos for Kids - Ms Rachel",
+      "published": "2026-04-02T18:00:06+00:00",
+      "url": "https://www.youtube.com/watch?v=1v3Dk41C_10",
+      "videoId": "1v3Dk41C_10"
+    },
+    {
+      "channel": "Ms Rachel – Toddler Learning Videos",
+      "title": "Learn with Ms Rachel - Friendship & Social Skills - Videos for Kids - Colors, Letters & Counting",
+      "published": "2026-02-26T13:00:07+00:00",
+      "url": "https://www.youtube.com/watch?v=2dDpryw3z5w",
+      "videoId": "2dDpryw3z5w"
+    },
+    {
+      "channel": "Ms Rachel – Toddler Learning Videos",
+      "title": "Brush Your Teeth Song with Ms Rachel and Elmo - Timer - Kids Songs and Nursery Rhymes",
+      "published": "2025-10-23T13:00:07+00:00",
+      "url": "https://www.youtube.com/watch?v=tYDuAfY77Do",
+      "videoId": "tYDuAfY77Do"
+    },
+    {
+      "channel": "Ms Rachel – Toddler Learning Videos",
+      "title": "Potty Training with Ms Rachel - Toddler Learning Video - Potty Songs for Toddlers - Potty Song",
+      "published": "2025-05-31T13:00:07+00:00",
+      "url": "https://www.youtube.com/watch?v=qXKsou9UmfY",
+      "videoId": "qXKsou9UmfY"
+    },
+    {
+      "channel": "Ms Rachel – Toddler Learning Videos",
+      "title": "Hide and Seek with Ms Rachel & Elmo + More Games, Kids Songs, Nursery Rhymes & Social Skills",
+      "published": "2025-01-09T14:30:21+00:00",
+      "url": "https://www.youtube.com/watch?v=drkVagtmIJA",
+      "videoId": "drkVagtmIJA"
+    },
+    {
+      "channel": "Ms Rachel – Toddler Learning Videos",
+      "title": "Preschool & Toddler Learning Video with Ms Rachel - Learn Shapes, Letters, Numbers, Colors & More",
+      "published": "2024-12-17T15:00:06+00:00",
+      "url": "https://www.youtube.com/watch?v=K_Aq4H03Nm4",
+      "videoId": "K_Aq4H03Nm4"
+    },
+    {
+      "channel": "Ms Rachel – Toddler Learning Videos",
+      "title": "I Love A Rainbow with Ms Rachel, Elmo & Abby + MORE Nursery Rhymes & Kids Songs - Toddler Songs",
+      "published": "2024-11-14T14:00:06+00:00",
+      "url": "https://www.youtube.com/watch?v=GLigE_f4dl0",
+      "videoId": "GLigE_f4dl0"
+    },
+    {
+      "channel": "Ms Rachel – Toddler Learning Videos",
+      "title": "Toddler Learning with Ms Rachel - Nursery Rhymes & Kids Songs - Baby Video - Milestones & Speech",
+      "published": "2024-10-29T12:30:06+00:00",
+      "url": "https://www.youtube.com/watch?v=h67AgK4EHq4",
+      "videoId": "h67AgK4EHq4"
+    },
+    {
+      "channel": "Ms Rachel – Toddler Learning Videos",
+      "title": "ABC Song - The Alphabet - ABCs & 123s - Phonics - Kids Songs & Nursery Rhymes for Children",
+      "published": "2024-09-25T12:30:32+00:00",
+      "url": "https://www.youtube.com/watch?v=b051ktudQDQ",
+      "videoId": "b051ktudQDQ"
     }
   ]
 }
