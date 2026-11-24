@@ -42,7 +42,7 @@
 <div class="toolbar"><input id="researchQ" placeholder="ابحث عن قناة أو موضوع…"><select id="researchLang"><option value="">كل اللغات</option><option value="en">English</option><option value="ar">العربية</option></select><select id="researchSort"><option value="views">المشاهدات</option><option value="growth">نمو المشاهدات 30 يوماً</option><option value="subs">المشتركون</option></select></div>
 <div id="researchStats" class="metrics"></div><div id="researchChannels" class="cards"></div>
 </section>
-<section class="insight" style="margin:18px 0">
+<section class="insight" style="margin:18px 0"><h2>📡 أحدث فيديوهات قنوات YouTube المنافسة — تحديث مجاني مباشر</h2><p class="muted">تُجلب أحدث الفيديوهات العامة من القنوات الـ19 المدرجة عبر RSS الرسمي من دون مفتاح API. يعرض RSS حتى 15 فيديو حديثاً لكل قناة، وليس الأرشيف التاريخي الكامل. TikTok وInstagram لا يقدمان هنا أرشيفاً عاماً موحداً مجانياً عبر هذا المسار.</p><button id="refreshLiveCompetitors">تحديث القائمة الآن</button><p id="liveFeedStatus" class="muted" aria-live="polite">اضغط التحديث لجلب أحدث الفيديوهات.</p><div id="liveFeedCards" class="cards"></div></section><section class="insight" style="margin:18px 0">
 <h2>🎞️ أمثلة فيديوهات قصيرة رائجة — مكتبة دراسة قابلة للبحث</h2>
 <p class="muted">هذه 10 أمثلة مرصودة في عينة حديثة من Instagram وTikTok، وليست أرشيفاً كاملاً لكل منشورات المنافسين. الأرقام كما ظهرت في لقطة البحث، وقد تتغير. ندرس الفكرة والإيقاع والخطاف فقط؛ لا ننسخ الفيديو أو الصوت أو الشخصيات.</p>
 <div class="toolbar"><input id="clipQ" placeholder="ابحث بعنوان الفيديو أو الحساب أو الفكرة…"><select id="clipPlatform"><option value="">كل المنصات</option><option value="Instagram">Instagram</option><option value="TikTok">TikTok</option></select><select id="clipSort"><option value="views">الأكثر مشاهدة</option><option value="outlier">الأعلى مقارنة بمعدل الحساب</option><option value="recent">الأحدث</option></select></div>
@@ -101,4 +101,16 @@ document.getElementById("saveClip").onclick=()=>{
 document.getElementById("exportClips").onclick=()=>{const blob=new Blob([JSON.stringify({researched:competitorClips,saved:getUserClips()},null,2)],{type:"application/json"}),url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;a.download="little-friends-competitor-library.json";a.click();setTimeout(()=>URL.revokeObjectURL(url),1000)};
 drawResearch();drawClips();
 
+
+document.getElementById("refreshLiveCompetitors")?.addEventListener("click",async()=>{
+ const btn=document.getElementById("refreshLiveCompetitors"),status=document.getElementById("liveFeedStatus"),cards=document.getElementById("liveFeedCards");
+ btn.disabled=true;status.textContent="جاري جلب أحدث الفيديوهات من YouTube RSS…";
+ try{
+  const response=await fetch("/api/competitors/latest"),data=await response.json();if(!response.ok)throw new Error(data.error||"تعذر التحديث");
+  cards.innerHTML=(data.videos||[]).map(v=>'<article class="card"><h2>'+safeText(v.channel)+' — '+safeText(v.title)+'</h2><p class="muted">'+safeText(v.published||"")+'</p><a href="'+safeText(v.url)+'" target="_blank" rel="noopener">مشاهدة الفيديو الأصلي ↗</a></article>').join("");
+  status.textContent="تم جلب "+data.videos.length+" فيديو حديث من "+data.channels_ok+" قناة من أصل "+data.channels_total+". "+(data.cached?"(نتيجة مخزنة مؤقتاً)":"");
+  if(data.channels_failed?.length)status.textContent+=" القنوات التي لم تستجب: "+data.channels_failed.join("، ");
+ }catch(error){status.textContent="فشل التحديث: "+error.message+".";}finally{btn.disabled=false;}
+});
+function safeText(v){return String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
 </script></body></html>
