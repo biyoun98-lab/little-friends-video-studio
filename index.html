@@ -77,7 +77,7 @@ const positions=focus==="leo"?[["leo",.5],["bobo",.2],["mimi",.8]]:focus==="mimi
 positions.forEach(([who,x],i)=>{const size=i===0?w*.22:w*.135,y=i===0?h*.57+bob:h*.59+(i===1?-bob:bob);if(who==="leo")drawLion(ctx,w*x,y,size,elapsed);else if(who==="mimi")drawBunny(ctx,w*x,y,size,elapsed);else drawBobo(ctx,w*x,y,size,elapsed)});
 }
 for(let k=0;k<6;k++){const fx=w*(.09+k*.16),fy=h*(.72+Math.sin(elapsed*1.6+k)*.006);ctx.fillStyle="#fff";ctx.beginPath();ctx.arc(fx,fy,w*.008,0,Math.PI*2);ctx.fill();ctx.fillStyle="#ffd34f";ctx.beginPath();ctx.arc(fx,fy,w*.0035,0,Math.PI*2);ctx.fill()}
-drawStoryVisual(ctx,w,h,scene,index,elapsed);
+ctx.save();ctx.translate(0,-h*.035);drawStoryVisual(ctx,w,h,scene,index,elapsed);ctx.restore();
 ctx.restore();
 ctx.textAlign="center";
 ctx.fillStyle="rgba(255,255,255,.95)";roundRect(ctx,w*.07,h*.055,w*.86,h*.13,Math.min(28,w*.03));ctx.fill();
