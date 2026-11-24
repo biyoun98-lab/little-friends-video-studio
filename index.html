@@ -244,39 +244,6 @@ if("speechSynthesis" in window){loadCharacterVoices();window.speechSynthesis.onv
 ["lang","title","age","duration","lesson","characters","tone","ratio","fps","description","hashtags"].forEach(id=>{const field=$(id);if(field){field.addEventListener("input",()=>saveDraft(false));field.addEventListener("change",()=>saveDraft(false))}});$("scenes").addEventListener("input",()=>saveDraft(false));$("scenes").addEventListener("change",()=>saveDraft(false));window.addEventListener("pagehide",()=>saveDraft(false));sample.forEach(addScene);try{const d=JSON.parse(localStorage.getItem("lfws-draft")||"null");if(d){Object.entries(d.fields||{}).forEach(([k,v])=>{if($(k))$(k).value=v});$("scenes").innerHTML="";(d.scenes||sample).forEach(addScene)}}catch(e){}makeBrief();const [pw,ph]=dims();$("preview").width=pw;$("preview").height=ph;drawFrame($("preview").getContext("2d"),pw,ph,sample[0],0,4,0);
 
 turn;}
-  const button=$("aiGenerate");button.disabled=true;$("aiStatus").textContent="Submitting one AI draft…";
-  try{
-    const response=await fetch("/api/ai/video",{method:"POST",headers:{"Content-Type":"application/json","X-AI-Access-Code":$("aiAccessCode").value.trim()},body:JSON.stringify({prompt:buildAIPrompt(),duration:5,aspect_ratio:"9:16"})});
-    const data=await response.json();
-    if(!response.ok)throw new Error(data.error||"AI request could not be submitted");
-    aiRequestId=data.request_id;$("aiCheck").disabled=!aiRequestId;
-    $("aiStatus").textContent="AI request accepted. Request ID: "+aiRequestId+". Press Check generation status; generation may take time.";
-  }catch(error){$("aiStatus").textContent="AI submission failed: "+error.message;}
-  finally{button.disabled=!aiCloudReady;}
-});
-$("aiCheck")?.addEventListener("click",async()=>{
-  if(!aiRequestId)return;
-  $("aiCheck").disabled=true;$("aiStatus").textContent="Checking AI generation…";
-  try{
-    const response=await fetch("/api/ai/video/"+encodeURIComponent(aiRequestId),{headers:{"X-AI-Access-Code":$("aiAccessCode").value.trim()}});
-    const data=await response.json();
-    if(!response.ok)throw new Error(data.error||"Could not check request");
-    if(data.status!=="COMPLETED"){
-      $("aiStatus").textContent="AI generation status: "+data.status+". Check again in a little while.";
-      return;
-    }
-    const output=data.result||{};
-    const url=output.video?.url||output.video_url||output.output?.video?.url||output.data?.video?.url;
-    if(!url){$("aiStatus").textContent="Generation completed, but the returned video URL was not recognized. Result: "+JSON.stringify(output).slice(0,1200);return;}
-    $("aiPreview").src=url;$("aiPreview").style.display="block";
-    $("aiDownload").href=url;$("aiDownload").style.display="inline-block";
-    $("aiStatus").textContent="AI draft completed. Review the character appearance, motion and child safety before using it.";
-  }catch(error){$("aiStatus").textContent="AI status check failed: "+error.message;}
-  finally{$("aiCheck").disabled=!aiRequestId;}
-});
-$("aiCostConfirm")?.addEventListener("change",e=>{if(!aiCloudReady)$("aiGenerate").disabled=true;});
-refreshAIStatus();
-
 
 async function refreshCompetitorFeed(){
  const button=$("refreshCompetitors"),status=$("competitorFeedStatus"),feed=$("competitorFeed");
