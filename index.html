@@ -243,8 +243,6 @@ if("speechSynthesis" in window){loadCharacterVoices();window.speechSynthesis.onv
 
 ["lang","title","age","duration","lesson","characters","tone","ratio","fps","description","hashtags"].forEach(id=>{const field=$(id);if(field){field.addEventListener("input",()=>saveDraft(false));field.addEventListener("change",()=>saveDraft(false))}});$("scenes").addEventListener("input",()=>saveDraft(false));$("scenes").addEventListener("change",()=>saveDraft(false));window.addEventListener("pagehide",()=>saveDraft(false));sample.forEach(addScene);try{const d=JSON.parse(localStorage.getItem("lfws-draft")||"null");if(d){Object.entries(d.fields||{}).forEach(([k,v])=>{if($(k))$(k).value=v});$("scenes").innerHTML="";(d.scenes||sample).forEach(addScene)}}catch(e){}makeBrief();const [pw,ph]=dims();$("preview").width=pw;$("preview").height=ph;drawFrame($("preview").getContext("2d"),pw,ph,sample[0],0,4,0);
 
-turn;}
-
 async function refreshCompetitorFeed(){
  const button=$("refreshCompetitors"),status=$("competitorFeedStatus"),feed=$("competitorFeed");
  button.disabled=true;status.textContent="جاري جلب أحدث الفيديوهات العامة من قنوات المنافسين…";
