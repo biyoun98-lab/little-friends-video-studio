@@ -8,7 +8,7 @@ const competitorHtml = await readFile(new URL("../competitor-library.html", impo
 
 const requiredIds = [
   "preview", "render", "renderBatch", "dailyBatch", "qualityStatus",
-  "videoDownload", "narrationAudio", "scenes", "renderStatus", "batchPackage", "aiStatus", "aiGenerate", "aiCheck", "aiCostConfirm", "aiAccessCode"
+  "videoDownload", "narrationAudio", "scenes", "renderStatus", "batchPackage"
 ];
 for (const id of requiredIds) {
   assert.match(html, new RegExp('id="' + id + '"'), `Missing required studio element: ${id}`);
@@ -34,16 +34,13 @@ assert.match(html, /function\s+downloadDailyPublishingPackage\s*\(/, "Three-epis
 assert.match(html, /madeForKids:true/, "YouTube child-directed publishing metadata must be included.");
 assert.match(html, /TikTok Studio/, "TikTok publishing destination is missing.");
 assert.match(html, /Metricool Planner/, "Metricool publishing workflow link is missing.");
+assert.ok(html.includes("refreshCompetitors"), "Free competitor RSS refresh control is missing.");
+assert.ok(server.includes("youtube.com/feeds/videos.xml"), "Free public YouTube RSS integration is missing.");
+assert.ok(server.includes("CACHE_MS=15*60*1000"), "Competitor RSS requests must be cached.");
+assert.ok(server.includes("competitorChannels=["), "Curated competitor channel IDs are missing.");
+assert.ok(!html.includes("fal.ai")&&!html.includes("FAL_KEY")&&!html.includes("Cloud AI video engine"), "The free edition must not expose paid AI controls.");
 assert.match(server, /const AI_ENDPOINT="minimax\/h3-max-turbo\/text-to-video"/, "Optional H3 Max Turbo AI engine must be identified.");
-assert.match(html, /paid AI video request/, "AI generation must disclose its paid nature.");
-assert.match(html, /refreshAIStatus/, "AI server configuration status check is missing.");
 assert.match(server, /Authorization:"Key "\+process\.env\.FAL_KEY/, "fal API key must remain server-side.");
-assert.match(server, /timingSafeEqual/, "AI access code must be checked safely on the server.");
-assert.match(server, /DAILY_AI_LIMIT=3/, "AI generation must have a daily spending guard.");
-assert.match(html, /X-AI-Access-Code/, "Browser must send the private AI access code only to the studio server.");
-assert.match(server, /enable_safety_checker:true/, "AI safety checker must remain enabled.");
-assert.match(server, /Only 5- or 10-second draft requests/, "Cloud AI request duration must be bounded.");
-assert.match(server, /recentAiSubmissions/, "Cloud AI requests must be rate-limited.");
 assert.match(server, /api\/ai\/video\/:requestId/, "AI job status endpoint is missing.");
 assert.match(html, /Alphabet Animal Safari/, "Alphabet competitor-inspired original episode is missing.");
 assert.match(html, /Move and Freeze with Mimi/, "Movement-song competitor-inspired original episode is missing.");
