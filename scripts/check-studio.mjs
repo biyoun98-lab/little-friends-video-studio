@@ -30,7 +30,7 @@ assert.match(html, /three episodes must have different titles/, "Duplicate batch
 
 const validatorMatch = html.match(/function validateEpisodeRecord\(ep\)\{[\s\S]*?function validateDailyBatch\(episodes\)\{[\s\S]*?\n\}/);
 assert.ok(validatorMatch, "Could not isolate batch validators for behavior tests.");
-assert.match(html, /function\\s+downloadDailyPublishingPackage\\s*\\(/, "Three-episode platform publishing pack is missing.");
+assert.match(html, /function\s+downloadDailyPublishingPackage\s*\(/, "Three-episode platform publishing pack is missing.");
 assert.match(html, /madeForKids:true/, "YouTube child-directed publishing metadata must be included.");
 assert.match(html, /TikTok Studio/, "TikTok publishing destination is missing.");
 assert.match(html, /Metricool Planner/, "Metricool publishing workflow link is missing.");
@@ -38,7 +38,7 @@ assert.match(html, /Alphabet Animal Safari/, "Alphabet competitor-inspired origi
 assert.match(html, /Move and Freeze with Mimi/, "Movement-song competitor-inspired original episode is missing.");
 assert.match(html, /The Animal Goodbye Parade/, "Animal-rhyme competitor-inspired original episode is missing.");
 
-const libraryMatch = html.match(/const episodeLibrary=(\\[[\\s\\S]*?\\n\\]);/);
+const libraryMatch = html.match(/const episodeLibrary=(\[[\s\S]*?\n\]);/);
 assert.ok(libraryMatch, "Episode template library could not be found.");
 const episodeLibrary = new Function("return " + libraryMatch[1])();
 assert.ok(episodeLibrary.length >= 23, "The studio should maintain at least 23 original episode templates.");
@@ -71,7 +71,7 @@ for (const episode of episodeLibrary) {
   assert.deepEqual(Array.from(issues), [], "Original episode template should pass preflight: " + episode.title);
 }
 
-const competitorScripts = [...competitorHtml.matchAll(/<script\\b[^>]*>([\\s\\S]*?)<\\/script>/gi)]
+const competitorScripts = [...competitorHtml.matchAll(/<script\b[^>]*>([\s\S]*?)<\/script>/gi)]
   .map(match => match[1].trim()).filter(Boolean);
 assert.ok(competitorScripts.length, "Competitor research page needs its own script.");
 for (const [index, source] of competitorScripts.entries()) {
@@ -80,8 +80,8 @@ for (const [index, source] of competitorScripts.entries()) {
 assert.match(competitorHtml, /const researchChannels=/, "Research competitor channel list is missing.");
 assert.match(competitorHtml, /const competitorClips=/, "Competitor short-video sample library is missing.");
 assert.match(competitorHtml, /lfws-competitor-clips/, "User-added competitor links must persist locally.");
-assert.match(competitorHtml, /little-friends-competitor-library\\.json/, "Competitor library export is missing.");
-const channelMatch = competitorHtml.match(/const researchChannels=(\\[[\\s\\S]*?\\]);\\s*const competitorClips=(\\[[\\s\\S]*?\\]);/);
+assert.match(competitorHtml, /little-friends-competitor-library\.json/, "Competitor library export is missing.");
+const channelMatch = competitorHtml.match(/const researchChannels=(\[[\s\S]*?\]);\s*const competitorClips=(\[[\s\S]*?\]);/);
 assert.ok(channelMatch, "Could not isolate competitor research data.");
 const competitorData = vm.createContext({});
 new vm.Script("globalThis.channels=" + channelMatch[1] + "; globalThis.clips=" + channelMatch[2] + ";").runInContext(competitorData);
