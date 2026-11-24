@@ -13,7 +13,7 @@ for (const id of requiredIds) {
   assert.match(html, new RegExp('id="' + id + '"'), `Missing required studio element: ${id}`);
 }
 
-const inlineScripts = [...html.matchAll(/<script\\b[^>]*>([\\s\\S]*?)<\\/script>/gi)]
+const inlineScripts = [...html.matchAll(/<script\b[^>]*>([\s\S]*?)<\/script>/gi)]
   .map(match => match[1].trim())
   .filter(Boolean);
 assert.ok(inlineScripts.length > 0, "No inline application script was found.");
@@ -25,6 +25,6 @@ for (const name of ["generateDailyBatch", "renderAllBatch", "renderVideo", "runQ
   assert.match(html, new RegExp("function\\s+" + name + "\\s*\\("), `Missing production function: ${name}`);
 }
 assert.match(server, /\/api\/health/, "Health endpoint is missing.");
-assert.match(server, /express\\.static/, "Static studio hosting is missing.");
+assert.match(server, /express\.static/, "Static studio hosting is missing.");
 
 console.log("PASS: studio markup, required controls, inline JavaScript syntax, production functions, and health endpoint.");
