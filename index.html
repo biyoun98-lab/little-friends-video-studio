@@ -83,4 +83,5 @@ function createBatch(){const theme=$("batchTheme").value.trim()||"Friendship and
 function loadBatchEpisode(i){const p=batchEpisodes[i];if(!p)return;$("title").value=p.title;$("lesson").value=p.goal;$("lang").value=p.language;$("scenes").innerHTML="";p.scenes.forEach(addScene);syncSceneOptions();makeBrief();$("renderStatus").textContent="Loaded "+p.title+". Choose Render video to create its storyboard-card video."}
 $("makeBatch").onclick=createBatch;
 $("downloadBatch").onclick=()=>{if(!batchEpisodes.length)return;download(new Blob([JSON.stringify({createdAt:new Date().toISOString(),episodes:batchEpisodes},null,2)],{type:"application/json"}),"little-friends-three-episode-batch.json")};
-\n</script></body></html>
+
+</script></body></html>
