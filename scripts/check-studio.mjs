@@ -8,7 +8,7 @@ const competitorHtml = await readFile(new URL("../competitor-library.html", impo
 
 const requiredIds = [
   "preview", "render", "renderBatch", "dailyBatch", "qualityStatus",
-  "videoDownload", "narrationAudio", "scenes", "renderStatus", "batchPackage"
+  "videoDownload", "narrationAudio", "scenes", "renderStatus", "batchPackage", "aiStatus", "aiGenerate", "aiCheck", "aiCostConfirm"
 ];
 for (const id of requiredIds) {
   assert.match(html, new RegExp('id="' + id + '"'), `Missing required studio element: ${id}`);
@@ -34,6 +34,14 @@ assert.match(html, /function\s+downloadDailyPublishingPackage\s*\(/, "Three-epis
 assert.match(html, /madeForKids:true/, "YouTube child-directed publishing metadata must be included.");
 assert.match(html, /TikTok Studio/, "TikTok publishing destination is missing.");
 assert.match(html, /Metricool Planner/, "Metricool publishing workflow link is missing.");
+assert.match(html, /minimax\/h3-max-turbo\/text-to-video/, "Optional H3 Max Turbo AI engine must be identified.");
+assert.match(html, /paid AI generation request/, "AI generation must disclose its paid nature.");
+assert.match(html, /refreshAIStatus/, "AI server configuration status check is missing.");
+assert.match(server, /Authorization:"Key "\+process\.env\.FAL_KEY/, "fal API key must remain server-side.");
+assert.match(server, /enable_safety_checker:true/, "AI safety checker must remain enabled.");
+assert.match(server, /Only 5- or 10-second draft requests/, "Cloud AI request duration must be bounded.");
+assert.match(server, /recentAiSubmissions/, "Cloud AI requests must be rate-limited.");
+assert.match(server, /api\/ai\/video\/:requestId/, "AI job status endpoint is missing.");
 assert.match(html, /Alphabet Animal Safari/, "Alphabet competitor-inspired original episode is missing.");
 assert.match(html, /Move and Freeze with Mimi/, "Movement-song competitor-inspired original episode is missing.");
 assert.match(html, /The Animal Goodbye Parade/, "Animal-rhyme competitor-inspired original episode is missing.");
