@@ -1,6 +1,11 @@
 name: Refresh free competitor video feed
 
 on:
+  push:
+    branches: [main]
+    paths:
+      - "scripts/update-competitor-feed.mjs"
+      - ".github/workflows/competitor-feed.yml"
   schedule:
     - cron: "0 */6 * * *"
   workflow_dispatch:
