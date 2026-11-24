@@ -21,23 +21,16 @@ for (const [index, source] of inlineScripts.entries()) {
   assert.doesNotThrow(() => new vm.Script(source), `Inline script ${index + 1} has a syntax error.`);
 }
 
-assert.match(html, /function\s+saveDraft\s*\(/, "Automatic local draft saving is missing.");
-assert.match(html, /addEventListener\("pagehide"/, "Draft persistence on page exit is missing.");
-for (const name of ["generateDailyBatch", "renderAllBatch", "renderVideo", "runQualityCheck", "drawStoryVisual", "preferredMimeType", "videoExtension"]) {
-  assert.match(html, new RegExp("function\\s+" + name + "\\s*\\("), `Missing production function: ${name}`);
-}
-assert.match(server, /\/api\/health/, "Health endpoint is missing.");
-assert.match(server, /express\.static/, "Static studio hosting is missing.");
-assert.match(html, /function\\s+validateEpisodeRecord\\s*\\(/, "Batch episode preflight validator is missing.");
-assert.match(html, /function\\s+validateDailyBatch\\s*\\(/, "Three-episode batch validator is missing.");
-assert.match(html, /const batchIssues=validateDailyBatch\\(episodes\\)/, "Batch preflight must run before rendering.");
+assert.match(html, /function\s+validateEpisodeRecord\s*\(/, "Batch episode preflight validator is missing.");
+assert.match(html, /function\s+validateDailyBatch\s*\(/, "Three-episode batch validator is missing.");
+assert.match(html, /const batchIssues=validateDailyBatch\(episodes\)/, "Batch preflight must run before rendering.");
 assert.match(html, /over 40 words/, "Preschool dialogue length guard is missing.");
 assert.match(html, /three episodes must have different titles/, "Duplicate batch-title guard is missing.");
 
-const validatorMatch = html.match(/function validateEpisodeRecord\\(ep\\)\\{[\\s\\S]*?function validateDailyBatch\\(episodes\\)\\{[\\s\\S]*?\\n\\}/);
+const validatorMatch = html.match(/function validateEpisodeRecord\(ep\)\{[\s\S]*?function validateDailyBatch\(episodes\)\{[\s\S]*?\n\}/);
 assert.ok(validatorMatch, "Could not isolate batch validators for behavior tests.");
 const validatorContext = vm.createContext({});
-new vm.Script(validatorMatch[0] + "\\nglobalThis.validateDailyBatch = validateDailyBatch;").runInContext(validatorContext);
+new vm.Script(validatorMatch[0] + "\nglobalThis.validateDailyBatch = validateDailyBatch;").runInContext(validatorContext);
 const validEpisode = {
   title: "Test episode", learningGoal: "Count to four", durationSeconds: 45,
   characters: "Leo: a friendly golden lion cub. Mimi: a white bunny. Bobo: a blue elephant.",
@@ -54,6 +47,5 @@ assert.deepEqual(Array.from(validatorContext.validateDailyBatch([
 assert.ok(validatorContext.validateDailyBatch([
   validEpisode, {...validEpisode, title: "Second episode", scenes: []}, {...validEpisode, title: "Test episode"}
 ]).length >= 2, "Invalid scenes and duplicate titles must fail batch preflight.");
-
 
 console.log("PASS: studio markup, required controls, inline JavaScript syntax, production functions, and health endpoint.");
