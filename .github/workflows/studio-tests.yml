@@ -5,10 +5,12 @@ on:
     branches:
       - main
       - "feature/**"
+      - "fix/**"
   pull_request:
     branches:
       - main
       - "setup/**"
+      - "feature/**"
 
 jobs:
   test:
@@ -26,3 +28,5 @@ jobs:
         run: node --check server.js
       - name: Run tests
         run: npm test
+      - name: Verify Cloudflare static build
+        run: npm run build:cloudflare
