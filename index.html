@@ -55,7 +55,7 @@ function speakNarration(){if(!("speechSynthesis" in window)||!("SpeechSynthesisU
 function makeBrief(){let s="LITTLE FRIENDS WORLD — PRODUCTION BRIEF\nTITLE: "+$("title").value+"\nLANGUAGE: "+$("lang").value+"\nAGE: "+$("age").value+"\nLENGTH: "+$("duration").value+" seconds\nMOOD: "+$("tone").value+"\nLEARNING GOAL: "+$("lesson").value+"\n\nCHARACTER CONTINUITY:\n"+$("characters").value+"\n\nSTORYBOARD:\n";sceneData().forEach((v,i)=>s+="\nSCENE "+(i+1)+": "+v[0]+"\nACTION / DIALOGUE: "+v[1]+"\nVISUAL PROMPT: "+v[2]+"\n");s+="\nSAFETY CHECK\n- Gentle, age-appropriate and non-frightening.\n- No dangerous imitation, bullying, or unsafe challenges.\n- Clear speech, simple vocabulary and positive ending.\n- Keep character appearance consistent.\n- Use original visuals and properly licensed audio.";brief=s;$("output").textContent=s;return s}
 function videoExtension(){return window.MediaRecorder&&MediaRecorder.isTypeSupported("video/webm")?"webm":"mp4"}
 function dims(){const r=$("ratio").value;return r==="landscape"?[1920,1080]:r==="square"?[1080,1080]:[1080,1920]}
-function drawFrame(ctx,w,h,scene,index,total,elapsed){
+function drawFrame(ctx,w,h,scene,index,total,elapsed){/* scene-aware staging, color grading and gentle camera motion */
 const words=(String(scene[0]||"")+" "+String(scene[1]||"")+" "+String(scene[2]||"")).toLowerCase();
 let skyTop="#8edbff",skyBottom="#e5f8ff",ground="#8bd37b",groundDark="#4eaa68";
 if(/night|dark|evening|star/.test(words)){skyTop="#263b72";skyBottom="#7087bd";ground="#536b87";groundDark="#354b6c"}
