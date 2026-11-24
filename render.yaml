@@ -11,3 +11,5 @@ services:
         value: 20
       - key: FAL_KEY
         sync: false
+      - key: AI_ACCESS_CODE
+        sync: false
