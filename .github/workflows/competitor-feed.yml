@@ -23,6 +23,8 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
+      - name: Check feed collector syntax
+        run: node --check scripts/update-competitor-feed.mjs
       - name: Fetch public competitor RSS feeds
         run: node scripts/update-competitor-feed.mjs
       - name: Commit updated feed
