@@ -11,7 +11,7 @@ for (const [i, source] of scripts.entries()) {
 for (const id of ["dailyBatch", "renderBatch", "qualityCheck", "render", "srt", "package"]) {
   assert.ok(html.includes('id="' + id + '"') || html.includes("id='" + id + "'"), "Missing UI control: " + id);
 }
-for (const feature of ["function generateDailyBatch", "async function renderAllBatch", "function runQualityCheck", "function drawStoryVisual", "function captions", "Creative score:", "scene-aware", "LEARN • PLAY • GROW"]) {
+for (const feature of ["function generateDailyBatch", "async function renderAllBatch", "function runQualityCheck", "function drawStoryVisual", "function captions", "Creative score:", "scene-aware", "LEARN • PLAY • GROW", "playSceneCue", "rain|cloud|puddle", "happy|sad|frustrat", "count|number|one"]) {
   assert.ok(html.includes(feature), "Missing production feature: " + feature);
 }
 assert.match(html, /dailyTarget:3/, "Daily batch target should remain three episodes");
