@@ -36,7 +36,7 @@ test("server smoke tests", async t => {
   const baseUrl = `http://127.0.0.1:${port}`;
   const child = spawn(process.execPath, ["server.js"], {
     cwd: process.cwd(),
-    env: { ...process.env, PORT: String(port), FAL_KEY: "" },
+    env: { ...process.env, PORT: String(port), FAL_KEY: "", LONGCAT_API_URL: "", LONGCAT_API_TOKEN: "" },
     stdio: "ignore"
   });
 
@@ -52,8 +52,28 @@ test("server smoke tests", async t => {
     const body = await response.json();
     assert.equal(body.ok, true);
     assert.equal(body.aiConfigured, false);
+    assert.equal(body.longcatConfigured, false);
     assert.equal(typeof body.model, "string");
     assert.equal("key" in body, false);
+  });
+
+  await t.test("LongCat health endpoint reports an unconfigured GPU worker", async () => {
+    const response = await fetch(baseUrl + "/api/longcat/health");
+    assert.equal(response.status, 200);
+    const body = await response.json();
+    assert.equal(body.ok, true);
+    assert.equal(body.configured, false);
+    assert.equal(body.engine, "LongCat-Video");
+  });
+
+  await t.test("LongCat generation is safely disabled without a GPU worker URL", async () => {
+    const response = await fetch(baseUrl + "/api/longcat/generate", {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({ prompt: "Leo and Mimi play together", duration: 5 })
+    });
+    assert.equal(response.status, 503);
+    assert.match((await response.json()).error, /LONGCAT_API_URL/);
   });
 
   await t.test("AI generation is safely disabled when no server key is configured", async () => {
@@ -76,6 +96,7 @@ test("server smoke tests", async t => {
     assert.equal(response.status, 200);
     const html = await response.text();
     assert.match(html, /Little Friends Video Studio/);
+    assert.match(html, /LongCat-Video/);
     assert.match(html, /Create 3 episodes/);
     assert.match(html, /Render all 3 episodes/);
     assert.match(html, /Publishing package/);
