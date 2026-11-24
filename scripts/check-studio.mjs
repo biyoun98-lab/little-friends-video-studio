@@ -41,7 +41,7 @@ assert.ok(competitorHtml.includes("data/competitor-feed.json"), "Competitor libr
 assert.match(competitorHtml, /refreshLiveCompetitors/, "Live competitor feed refresh control is missing.");
 assert.ok(server.includes("CACHE_MS=15*60*1000"), "Competitor RSS requests must be cached.");
 assert.ok(server.includes("competitorChannels=["), "Curated competitor channel IDs are missing.");
-assert.ok(server.includes("competitorHandles=["), "Major competitor channels must be included in the free RSS feed.");
+assert.ok(server.includes("Cocomelon – Nursery Rhymes")&&server.includes("Numberblocks"), "Major competitor channels must be included in the free RSS feed.");
 assert.ok(!html.includes("fal.ai")&&!html.includes("FAL_KEY")&&!html.includes("Cloud AI video engine"), "The free edition must not expose paid AI controls.");
 assert.match(html, /Alphabet Animal Safari/, "Alphabet competitor-inspired original episode is missing.");
 assert.match(html, /Move and Freeze with Mimi/, "Movement-song competitor-inspired original episode is missing.");
