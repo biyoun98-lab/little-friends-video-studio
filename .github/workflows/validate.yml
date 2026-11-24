@@ -12,8 +12,12 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
+      - name: Install dependencies
+        run: npm install
       - name: Check backend JavaScript
         run: node --check server.js
       - name: Check browser JavaScript syntax
         run: |
           node -e 'const fs=require("fs"); const html=fs.readFileSync("index.html","utf8"); const match=html.match(/<script>([\s\S]*)<\/script>/); if(!match) throw new Error("Inline script not found"); new Function(match[1]); console.log("Inline JavaScript syntax OK");'
+      - name: Run server smoke tests
+        run: npm test
