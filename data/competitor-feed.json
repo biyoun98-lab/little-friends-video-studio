@@ -1,10 +1,73 @@
 {
-  "updated_at": "2026-11-25T16:56:12.400Z",
+  "updated_at": "2026-11-26T01:40:20.967Z",
   "source": "YouTube public RSS feeds",
   "channels_total": 27,
   "channels_ok": 27,
   "channels_failed": [],
   "videos": [
+    {
+      "channel": "Playful Animals",
+      "title": "Cloud Hop Kitty Day ☁️🐱🌈 | Cute Cat Adventure for Kids | Fun Nursery Rhyme & Preschool Learning",
+      "published": "2026-11-26T01:30:14+00:00",
+      "url": "https://www.youtube.com/watch?v=Y9ehrvi-PHU",
+      "videoId": "Y9ehrvi-PHU"
+    },
+    {
+      "channel": "Bunny ABC Kids",
+      "title": "Why Should Kids Eat Healthy Food? 🍎 | Healthy Eating for Kids",
+      "published": "2026-11-26T01:13:49+00:00",
+      "url": "https://www.youtube.com/watch?v=6TNpcmpKFT0",
+      "videoId": "6TNpcmpKFT0"
+    },
+    {
+      "channel": "Playful Animals",
+      "title": "Learning Colors Bus 🚌🌈 | Color Song for Kids | Fun Preschool Learning & Nursery Rhyme",
+      "published": "2026-11-26T01:00:38+00:00",
+      "url": "https://www.youtube.com/watch?v=IeL3CD3trXk",
+      "videoId": "IeL3CD3trXk"
+    },
+    {
+      "channel": "Pip the Kiwi",
+      "title": "Olu the Baby Octopus and His Eight Squishy Hugs 🐙💜",
+      "published": "2026-11-26T00:15:32+00:00",
+      "url": "https://www.youtube.com/watch?v=7hMBsflMr-U",
+      "videoId": "7hMBsflMr-U"
+    },
+    {
+      "channel": "Pinkfong – Baby Shark",
+      "title": "On the 12 Days of Christmas, My True Love Gave to Me! #merrychristmas #babyshark",
+      "published": "2026-11-25T23:00:16+00:00",
+      "url": "https://www.youtube.com/watch?v=TU8u8VkZfyU",
+      "videoId": "TU8u8VkZfyU"
+    },
+    {
+      "channel": "ABC Luma",
+      "title": "Racing Bike ABC Song for Kids | Capital Letters A-Z | Learn ABC #abcsong #alphabetsong #learnabc",
+      "published": "2026-11-25T22:45:16+00:00",
+      "url": "https://www.youtube.com/watch?v=bx9vEyyHWFk",
+      "videoId": "bx9vEyyHWFk"
+    },
+    {
+      "channel": "Bee TV",
+      "title": "In this town | Footsteps 👣 · Walk Big 👣",
+      "published": "2026-11-25T22:06:17+00:00",
+      "url": "https://www.youtube.com/watch?v=ZwSWw7-2LfE",
+      "videoId": "ZwSWw7-2LfE"
+    },
+    {
+      "channel": "Bee TV",
+      "title": "If Nobody Says Your Name, You Disappear… I'm the New Kid 👻 #roblox",
+      "published": "2026-11-25T19:39:26+00:00",
+      "url": "https://www.youtube.com/watch?v=T18w7xLnYpQ",
+      "videoId": "T18w7xLnYpQ"
+    },
+    {
+      "channel": "Jad Learning World",
+      "title": "وسائل النقل للأطفال 🚗✈️ | رحلة جاد المدهشة!",
+      "published": "2026-11-25T19:30:12+00:00",
+      "url": "https://www.youtube.com/watch?v=vtbqQaqSFus",
+      "videoId": "vtbqQaqSFus"
+    },
     {
       "channel": "Bee TV",
       "title": "In this town | Never Sign It 🎫 · Save Me a Seat 🚌",
@@ -77,7 +140,7 @@
     },
     {
       "channel": "ABC Luma",
-      "title": "Racing Bike ABC Song for Toddlers | Learn Uppercase & Lowercase Alphabet A to Z",
+      "title": "Racing Bike ABC Song for Toddlers | Learn Uppercase & Lowercase Alphabet A to Z kids",
       "published": "2026-11-25T13:03:00+00:00",
       "url": "https://www.youtube.com/watch?v=K6R8zNjRiGU",
       "videoId": "K6R8zNjRiGU"
@@ -126,7 +189,7 @@
     },
     {
       "channel": "Kidz Toons",
-      "title": "ABC Song for toddlers l learning A to Z🏗️🔤 #shorts",
+      "title": "What Happens When You Stack the Alphabet Tower? 🏗️🔤 #shorts",
       "published": "2026-11-25T12:00:19+00:00",
       "url": "https://www.youtube.com/watch?v=g_p9sJvWB_8",
       "videoId": "g_p9sJvWB_8"
@@ -193,20 +256,6 @@
       "published": "2026-11-25T09:30:11+00:00",
       "url": "https://www.youtube.com/watch?v=uA4rJiMEhU4",
       "videoId": "uA4rJiMEhU4"
-    },
-    {
-      "channel": "Playful Animals",
-      "title": "Splash Splash River Boat 🚤🌊 | Fun Boat Song for Kids | Water Adventure & Nursery Rhyme",
-      "published": "2026-11-25T09:00:05+00:00",
-      "url": "https://www.youtube.com/watch?v=tfNQkVdLBFk",
-      "videoId": "tfNQkVdLBFk"
-    },
-    {
-      "channel": "Playful Animals",
-      "title": "Baby Garden Friends 🌸🐝🦋 | Fun Garden Song for Kids | Cute Animal Friends & Preschool Learning",
-      "published": "2026-11-25T08:30:18+00:00",
-      "url": "https://www.youtube.com/watch?v=tsHXJbxcG-w",
-      "videoId": "tsHXJbxcG-w"
     },
     {
       "channel": "Indra Bikin Rusuh",
@@ -1028,13 +1077,6 @@
       "videoId": "mJ8Izr35hFk"
     },
     {
-      "channel": "Bee TV",
-      "title": "Two Moons 🌕 Don't Blink Back 👁️",
-      "published": "2026-11-20T12:39:58+00:00",
-      "url": "https://www.youtube.com/watch?v=SYRzbsCzckE",
-      "videoId": "SYRzbsCzckE"
-    },
-    {
       "channel": "Kidz Toons",
       "title": "What Happens When the Rain Hits the Spider? 🌧️🕷️ #shorts",
       "published": "2026-11-20T12:30:25+00:00",
@@ -1117,20 +1159,6 @@
       "published": "2026-11-20T04:20:19+00:00",
       "url": "https://www.youtube.com/watch?v=OhHOZ9xeIyk",
       "videoId": "OhHOZ9xeIyk"
-    },
-    {
-      "channel": "Bunny ABC Kids",
-      "title": "🧼 Why We Wash Our Hands! 🐰 Fun Lesson for Toddlers #shorts",
-      "published": "2026-11-20T02:15:24+00:00",
-      "url": "https://www.youtube.com/watch?v=yaJ-ApDA6qQ",
-      "videoId": "yaJ-ApDA6qQ"
-    },
-    {
-      "channel": "Bee TV",
-      "title": "Float Hour 🎈 Never Look Up ☁️",
-      "published": "2026-11-20T01:08:06+00:00",
-      "url": "https://www.youtube.com/watch?v=yyNbudL4bVo",
-      "videoId": "yyNbudL4bVo"
     },
     {
       "channel": "Pip the Kiwi",
@@ -1327,13 +1355,6 @@
       "published": "2026-11-18T14:00:10+00:00",
       "url": "https://www.youtube.com/watch?v=6PbKFXQPDgA",
       "videoId": "6PbKFXQPDgA"
-    },
-    {
-      "channel": "ABC Luma",
-      "title": "Catchy ABC Song for Toddlers | Learn Uppercase & Lowercase Alphabet A to Z",
-      "published": "2026-11-18T13:43:30+00:00",
-      "url": "https://www.youtube.com/watch?v=hVOHFmx8U7c",
-      "videoId": "hVOHFmx8U7c"
     },
     {
       "channel": "MoodNMotion",
@@ -2043,25 +2064,11 @@
       "videoId": "2BnElG1NaN0"
     },
     {
-      "channel": "Pip the Kiwi",
-      "title": "Baby Sloth Sasha Misses the Big Rainbow But Finds a Tiny One 🌈",
-      "published": "2026-11-12T00:17:32+00:00",
-      "url": "https://www.youtube.com/watch?v=z1Wgt2mdSx8",
-      "videoId": "z1Wgt2mdSx8"
-    },
-    {
       "channel": "The Smile Brothers",
       "title": "WHAT’S THE MISSING NUMBERS? MATH 🧮 LESSON FOR KIDS",
       "published": "2026-11-11T23:59:27+00:00",
       "url": "https://www.youtube.com/watch?v=OWHwTxGB78o",
       "videoId": "OWHwTxGB78o"
-    },
-    {
-      "channel": "Pinkfong – Baby Shark",
-      "title": "Make the Right Sound or Get a Funny Doodle 😛🖍️ #mukbang #asmr",
-      "published": "2026-11-11T23:00:26+00:00",
-      "url": "https://www.youtube.com/watch?v=dFQDZMPPH-k",
-      "videoId": "dFQDZMPPH-k"
     },
     {
       "channel": "MoodNMotion",
@@ -2545,13 +2552,6 @@
       "published": "2026-10-19T15:41:26+00:00",
       "url": "https://www.youtube.com/watch?v=EOs2YQkl8-g",
       "videoId": "EOs2YQkl8-g"
-    },
-    {
-      "channel": "Jad Learning World",
-      "title": "جاد يسقي البذرة 🌱 | ماذا سيحدث بعدها؟",
-      "published": "2026-10-19T11:00:38+00:00",
-      "url": "https://www.youtube.com/watch?v=R5raU9lV0xw",
-      "videoId": "R5raU9lV0xw"
     },
     {
       "channel": "KidsMegaHub",
